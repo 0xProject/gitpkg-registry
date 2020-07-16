@@ -1,0 +1,462 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "IDydx",
+    "compilerOutput": {
+        "abi": [
+            {
+                "constant": true,
+                "inputs": [
+                    {
+                        "components": [
+                            {
+                                "internalType": "address",
+                                "name": "owner",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "number",
+                                "type": "uint256"
+                            }
+                        ],
+                        "internalType": "struct IDydx.AccountInfo",
+                        "name": "account",
+                        "type": "tuple"
+                    }
+                ],
+                "name": "getAdjustedAccountValues",
+                "outputs": [
+                    {
+                        "components": [
+                            {
+                                "internalType": "uint256",
+                                "name": "value",
+                                "type": "uint256"
+                            }
+                        ],
+                        "internalType": "struct IDydx.Value",
+                        "name": "supplyValue",
+                        "type": "tuple"
+                    },
+                    {
+                        "components": [
+                            {
+                                "internalType": "uint256",
+                                "name": "value",
+                                "type": "uint256"
+                            }
+                        ],
+                        "internalType": "struct IDydx.Value",
+                        "name": "borrowValue",
+                        "type": "tuple"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "constant": true,
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "owner",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "operator",
+                        "type": "address"
+                    }
+                ],
+                "name": "getIsLocalOperator",
+                "outputs": [
+                    {
+                        "internalType": "bool",
+                        "name": "isLocalOperator",
+                        "type": "bool"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "constant": true,
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "marketId",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "getMarketMarginPremium",
+                "outputs": [
+                    {
+                        "components": [
+                            {
+                                "internalType": "uint256",
+                                "name": "value",
+                                "type": "uint256"
+                            }
+                        ],
+                        "internalType": "struct IDydx.D256",
+                        "name": "premium",
+                        "type": "tuple"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "constant": true,
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "marketId",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "getMarketPrice",
+                "outputs": [
+                    {
+                        "components": [
+                            {
+                                "internalType": "uint256",
+                                "name": "value",
+                                "type": "uint256"
+                            }
+                        ],
+                        "internalType": "struct IDydx.Price",
+                        "name": "price",
+                        "type": "tuple"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "constant": true,
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "marketId",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "getMarketTokenAddress",
+                "outputs": [
+                    {
+                        "internalType": "address",
+                        "name": "tokenAddress",
+                        "type": "address"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "constant": true,
+                "inputs": [],
+                "name": "getRiskParams",
+                "outputs": [
+                    {
+                        "components": [
+                            {
+                                "components": [
+                                    {
+                                        "internalType": "uint256",
+                                        "name": "value",
+                                        "type": "uint256"
+                                    }
+                                ],
+                                "internalType": "struct IDydx.D256",
+                                "name": "marginRatio",
+                                "type": "tuple"
+                            },
+                            {
+                                "components": [
+                                    {
+                                        "internalType": "uint256",
+                                        "name": "value",
+                                        "type": "uint256"
+                                    }
+                                ],
+                                "internalType": "struct IDydx.D256",
+                                "name": "liquidationSpread",
+                                "type": "tuple"
+                            },
+                            {
+                                "components": [
+                                    {
+                                        "internalType": "uint256",
+                                        "name": "value",
+                                        "type": "uint256"
+                                    }
+                                ],
+                                "internalType": "struct IDydx.D256",
+                                "name": "earningsRate",
+                                "type": "tuple"
+                            },
+                            {
+                                "components": [
+                                    {
+                                        "internalType": "uint256",
+                                        "name": "value",
+                                        "type": "uint256"
+                                    }
+                                ],
+                                "internalType": "struct IDydx.Value",
+                                "name": "minBorrowedValue",
+                                "type": "tuple"
+                            }
+                        ],
+                        "internalType": "struct IDydx.RiskParams",
+                        "name": "riskParams",
+                        "type": "tuple"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "constant": false,
+                "inputs": [
+                    {
+                        "components": [
+                            {
+                                "internalType": "address",
+                                "name": "owner",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "number",
+                                "type": "uint256"
+                            }
+                        ],
+                        "internalType": "struct IDydx.AccountInfo[]",
+                        "name": "accounts",
+                        "type": "tuple[]"
+                    },
+                    {
+                        "components": [
+                            {
+                                "internalType": "enum IDydx.ActionType",
+                                "name": "actionType",
+                                "type": "uint8"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "accountIdx",
+                                "type": "uint256"
+                            },
+                            {
+                                "components": [
+                                    {
+                                        "internalType": "bool",
+                                        "name": "sign",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "internalType": "enum IDydx.AssetDenomination",
+                                        "name": "denomination",
+                                        "type": "uint8"
+                                    },
+                                    {
+                                        "internalType": "enum IDydx.AssetReference",
+                                        "name": "ref",
+                                        "type": "uint8"
+                                    },
+                                    {
+                                        "internalType": "uint256",
+                                        "name": "value",
+                                        "type": "uint256"
+                                    }
+                                ],
+                                "internalType": "struct IDydx.AssetAmount",
+                                "name": "amount",
+                                "type": "tuple"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "primaryMarketId",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "secondaryMarketId",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "address",
+                                "name": "otherAddress",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "otherAccountIdx",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "bytes",
+                                "name": "data",
+                                "type": "bytes"
+                            }
+                        ],
+                        "internalType": "struct IDydx.ActionArgs[]",
+                        "name": "actions",
+                        "type": "tuple[]"
+                    }
+                ],
+                "name": "operate",
+                "outputs": [],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "constant": false,
+                "inputs": [
+                    {
+                        "components": [
+                            {
+                                "internalType": "address",
+                                "name": "operator",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "bool",
+                                "name": "trusted",
+                                "type": "bool"
+                            }
+                        ],
+                        "internalType": "struct IDydx.OperatorArg[]",
+                        "name": "args",
+                        "type": "tuple[]"
+                    }
+                ],
+                "name": "setOperators",
+                "outputs": [],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function"
+            }
+        ],
+        "devdoc": {
+            "methods": {
+                "getAdjustedAccountValues((address,uint256))": {
+                    "details": "Get the total supplied and total borrowed values of an account adjusted by the marginPremium      of each market. Supplied values are divided by (1 + marginPremium) for each market and      borrowed values are multiplied by (1 + marginPremium) for each market. Comparing these      adjusted values gives the margin-ratio of the account which will be compared to the global      margin-ratio when determining if the account can be liquidated.",
+                    "params": {
+                        "account": "The account to query"
+                    },
+                    "return": "supplyValue The supplied value of the account (adjusted for marginPremium)borrowValue The borrowed value of the account (adjusted for marginPremium)"
+                },
+                "getIsLocalOperator(address,address)": {
+                    "details": "Return true if a particular address is approved as an operator for an owner's accounts.      Approved operators can act on the accounts of the owner as if it were the operator's own.",
+                    "params": {
+                        "operator": "The possible operator",
+                        "owner": "The owner of the accounts"
+                    },
+                    "return": "isLocalOperator True if operator is approved for owner's accounts"
+                },
+                "getMarketMarginPremium(uint256)": {
+                    "details": "Get the margin premium for a market. A margin premium makes it so that any positions that      include the market require a higher collateralization to avoid being liquidated.",
+                    "params": {
+                        "marketId": "The market to query"
+                    },
+                    "return": "premium The market's margin premium"
+                },
+                "getMarketPrice(uint256)": {
+                    "details": "Get the price of the token for a market.",
+                    "params": {
+                        "marketId": "The market to query"
+                    },
+                    "return": "price The price of each atomic unit of the token"
+                },
+                "getMarketTokenAddress(uint256)": {
+                    "details": "Get the ERC20 token address for a market.",
+                    "params": {
+                        "marketId": "The market to query"
+                    },
+                    "return": "tokenAddress The token address"
+                },
+                "getRiskParams()": {
+                    "details": "Get all risk parameters in a single struct.",
+                    "return": "riskParams All global risk parameters"
+                },
+                "operate((address,uint256)[],(uint8,uint256,(bool,uint8,uint8,uint256),uint256,uint256,address,uint256,bytes)[])": {
+                    "details": "The main entry-point to Solo that allows users and contracts to manage accounts.      Take one or more actions on one or more accounts. The msg.sender must be the owner or      operator of all accounts except for those being liquidated, vaporized, or traded with.      One call to operate() is considered a singular \"operation\". Account collateralization is      ensured only after the completion of the entire operation.",
+                    "params": {
+                        "accounts": "A list of all accounts that will be used in this operation. Cannot contain                   duplicates. In each action, the relevant account will be referred-to by its                   index in the list.",
+                        "actions": "An ordered list of all actions that will be taken in this operation. The                   actions will be processed in order."
+                    }
+                }
+            }
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            },
+            "deployedBytecode": {
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            }
+        }
+    },
+    "sourceTreeHashHex": "0x3591dcd758ef1a67457ede3150581400732ee75960b2db9ac702fb99391b82d8",
+    "sources": {
+        "./IDydx.sol": {
+            "id": 27
+        }
+    },
+    "sourceCodes": {
+        "./IDydx.sol": "/*\n\n  Copyright 2019 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.5.9;\npragma experimental ABIEncoderV2;\n\n\ninterface IDydx {\n\n    /// @dev Represents the unique key that specifies an account\n    struct AccountInfo {\n        address owner;  // The address that owns the account\n        uint256 number; // A nonce that allows a single address to control many accounts\n    }\n\n    enum ActionType {\n        Deposit,   // supply tokens\n        Withdraw,  // borrow tokens\n        Transfer,  // transfer balance between accounts\n        Buy,       // buy an amount of some token (externally)\n        Sell,      // sell an amount of some token (externally)\n        Trade,     // trade tokens against another account\n        Liquidate, // liquidate an undercollateralized or expiring account\n        Vaporize,  // use excess tokens to zero-out a completely negative account\n        Call       // send arbitrary data to an address\n    }\n\n    /// @dev Arguments that are passed to Solo in an ordered list as part of a single operation.\n    /// Each ActionArgs has an actionType which specifies which action struct that this data will be\n    /// parsed into before being processed.\n    struct ActionArgs {\n        ActionType actionType;\n        uint256 accountIdx;\n        AssetAmount amount;\n        uint256 primaryMarketId;\n        uint256 secondaryMarketId;\n        address otherAddress;\n        uint256 otherAccountIdx;\n        bytes data;\n    }\n\n    enum AssetDenomination {\n        Wei, // the amount is denominated in wei\n        Par  // the amount is denominated in par\n    }\n\n    enum AssetReference {\n        Delta, // the amount is given as a delta from the current value\n        Target // the amount is given as an exact number to end up at\n    }\n\n    struct AssetAmount {\n        bool sign; // true if positive\n        AssetDenomination denomination;\n        AssetReference ref;\n        uint256 value;\n    }\n\n    struct D256 {\n        uint256 value;\n    }\n\n    struct Value {\n        uint256 value;\n    }\n\n    struct Price {\n        uint256 value;\n    }\n\n    struct OperatorArg {\n        address operator;\n        bool trusted;\n    }\n\n    /// @dev The global risk parameters that govern the health and security of the system\n    struct RiskParams {\n        // Required ratio of over-collateralization\n        D256 marginRatio;\n        // Percentage penalty incurred by liquidated accounts\n        D256 liquidationSpread;\n        // Percentage of the borrower's interest fee that gets passed to the suppliers\n        D256 earningsRate;\n        // The minimum absolute borrow value of an account\n        // There must be sufficient incentivize to liquidate undercollateralized accounts\n        Value minBorrowedValue;\n    }\n\n    /// @dev The main entry-point to Solo that allows users and contracts to manage accounts.\n    ///      Take one or more actions on one or more accounts. The msg.sender must be the owner or\n    ///      operator of all accounts except for those being liquidated, vaporized, or traded with.\n    ///      One call to operate() is considered a singular \"operation\". Account collateralization is\n    ///      ensured only after the completion of the entire operation.\n    /// @param  accounts  A list of all accounts that will be used in this operation. Cannot contain\n    ///                   duplicates. In each action, the relevant account will be referred-to by its\n    ///                   index in the list.\n    /// @param  actions   An ordered list of all actions that will be taken in this operation. The\n    ///                   actions will be processed in order.\n    function operate(\n        AccountInfo[] calldata accounts,\n        ActionArgs[] calldata actions\n    )\n        external;\n\n    // @dev Approves/disapproves any number of operators. An operator is an external address that has the\n    //      same permissions to manipulate an account as the owner of the account. Operators are simply\n    //      addresses and therefore may either be externally-owned Ethereum accounts OR smart contracts.\n    //      Operators are also able to act as AutoTrader contracts on behalf of the account owner if the\n    //      operator is a smart contract and implements the IAutoTrader interface.\n    // @param args A list of OperatorArgs which have an address and a boolean. The boolean value\n    //        denotes whether to approve (true) or revoke approval (false) for that address.\n    function setOperators(OperatorArg[] calldata args) external;\n\n    /// @dev Return true if a particular address is approved as an operator for an owner's accounts.\n    ///      Approved operators can act on the accounts of the owner as if it were the operator's own.\n    /// @param owner The owner of the accounts\n    /// @param operator The possible operator\n    /// @return isLocalOperator True if operator is approved for owner's accounts\n    function getIsLocalOperator(\n        address owner,\n        address operator\n    )\n        external\n        view\n        returns (bool isLocalOperator);\n\n    /// @dev Get the ERC20 token address for a market.\n    /// @param marketId The market to query\n    /// @return tokenAddress The token address\n    function getMarketTokenAddress(\n        uint256 marketId\n    )\n        external\n        view\n        returns (address tokenAddress);\n\n    /// @dev Get all risk parameters in a single struct.\n    /// @return riskParams All global risk parameters\n    function getRiskParams()\n        external\n        view\n        returns (RiskParams memory riskParams);\n\n    /// @dev Get the price of the token for a market.\n    /// @param marketId The market to query\n    /// @return price The price of each atomic unit of the token\n    function getMarketPrice(\n        uint256 marketId\n    )\n        external\n        view\n        returns (Price memory price);\n\n    /// @dev Get the margin premium for a market. A margin premium makes it so that any positions that\n    ///      include the market require a higher collateralization to avoid being liquidated.\n    /// @param  marketId  The market to query\n    /// @return premium The market's margin premium\n    function getMarketMarginPremium(uint256 marketId)\n        external\n        view\n        returns (D256 memory premium);\n\n    /// @dev Get the total supplied and total borrowed values of an account adjusted by the marginPremium\n    ///      of each market. Supplied values are divided by (1 + marginPremium) for each market and\n    ///      borrowed values are multiplied by (1 + marginPremium) for each market. Comparing these\n    ///      adjusted values gives the margin-ratio of the account which will be compared to the global\n    ///      margin-ratio when determining if the account can be liquidated.\n    /// @param account The account to query\n    /// @return supplyValue The supplied value of the account (adjusted for marginPremium)\n    /// @return borrowValue The borrowed value of the account (adjusted for marginPremium)\n    function getAdjustedAccountValues(\n        AccountInfo calldata account\n    )\n        external\n        view\n        returns (Value memory supplyValue, Value memory borrowValue);\n}\n"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.5.17+commit.d19bba13",
+        "settings": {
+            "remappings": [
+                "@0x/contracts-utils=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-utils",
+                "@0x/contracts-erc1155=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-erc1155",
+                "@0x/contracts-erc20=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-erc20",
+                "@0x/contracts-exchange-libs=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-exchange-libs",
+                "@0x/contracts-exchange=/Users/michaelzhu/monorepo/node_modules/@0x/contracts-exchange"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 1000000,
+                "details": {
+                    "yul": true,
+                    "deduplicate": true,
+                    "cse": true,
+                    "constantOptimizer": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}

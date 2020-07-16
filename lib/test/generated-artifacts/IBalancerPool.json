@@ -1,0 +1,129 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "IBalancerPool",
+    "compilerOutput": {
+        "abi": [
+            {
+                "constant": false,
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "tokenIn",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenAmountIn",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "tokenOut",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "minAmountOut",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "maxPrice",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "swapExactAmountIn",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenAmountOut",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "spotPriceAfter",
+                        "type": "uint256"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function"
+            }
+        ],
+        "devdoc": {
+            "methods": {
+                "swapExactAmountIn(address,uint256,address,uint256,uint256)": {
+                    "details": "Sell `tokenAmountIn` of `tokenIn` and receive `tokenOut`.",
+                    "params": {
+                        "maxPrice": "The maximum value for `spotPriceAfter`.",
+                        "minAmountOut": "The minimum amount of `tokenOut` to buy.",
+                        "tokenAmountIn": "The amount of `tokenIn` to sell.",
+                        "tokenIn": "The token being sold",
+                        "tokenOut": "The token being bought."
+                    },
+                    "return": "tokenAmountOut The amount of `tokenOut` bought.spotPriceAfter The new marginal spot price of the given         token pair for this pool."
+                }
+            }
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            },
+            "deployedBytecode": {
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            }
+        }
+    },
+    "sourceTreeHashHex": "0x6a5c62deed472db19b9b614979339e62c4caf0bf0ff44e9d3bfca64165e9dafd",
+    "sources": {
+        "./IBalancerPool.sol": {
+            "id": 24
+        }
+    },
+    "sourceCodes": {
+        "./IBalancerPool.sol": "/*\n\n  Copyright 2020 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.5.9;\n\n\ninterface IBalancerPool {\n    /// @dev Sell `tokenAmountIn` of `tokenIn` and receive `tokenOut`.\n    /// @param tokenIn The token being sold\n    /// @param tokenAmountIn The amount of `tokenIn` to sell.\n    /// @param tokenOut The token being bought.\n    /// @param minAmountOut The minimum amount of `tokenOut` to buy.\n    /// @param maxPrice The maximum value for `spotPriceAfter`.\n    /// @return tokenAmountOut The amount of `tokenOut` bought.\n    /// @return spotPriceAfter The new marginal spot price of the given\n    ///         token pair for this pool.\n    function swapExactAmountIn(\n        address tokenIn,\n        uint tokenAmountIn,\n        address tokenOut,\n        uint minAmountOut,\n        uint maxPrice\n    ) external returns (uint tokenAmountOut, uint spotPriceAfter);\n}"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.5.17+commit.d19bba13",
+        "settings": {
+            "remappings": [
+                "@0x/contracts-utils=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-utils",
+                "@0x/contracts-erc1155=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-erc1155",
+                "@0x/contracts-erc20=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-erc20",
+                "@0x/contracts-exchange-libs=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-exchange-libs",
+                "@0x/contracts-exchange=/Users/michaelzhu/monorepo/node_modules/@0x/contracts-exchange"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 1000000,
+                "details": {
+                    "yul": true,
+                    "deduplicate": true,
+                    "cse": true,
+                    "constantOptimizer": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}

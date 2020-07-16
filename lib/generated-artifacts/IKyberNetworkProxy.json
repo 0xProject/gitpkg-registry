@@ -1,0 +1,136 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "IKyberNetworkProxy",
+    "compilerOutput": {
+        "abi": [
+            {
+                "constant": false,
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "sellTokenAddress",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "sellAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "buyTokenAddress",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address payable",
+                        "name": "recipientAddress",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "maxBuyTokenAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "minConversionRate",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "walletId",
+                        "type": "address"
+                    }
+                ],
+                "name": "trade",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "boughtAmount",
+                        "type": "uint256"
+                    }
+                ],
+                "payable": true,
+                "stateMutability": "payable",
+                "type": "function"
+            }
+        ],
+        "devdoc": {
+            "methods": {
+                "trade(address,uint256,address,address,uint256,uint256,address)": {
+                    "details": "Sells `sellTokenAddress` tokens for `buyTokenAddress` tokens.",
+                    "params": {
+                        "buyTokenAddress": "Token to buy.",
+                        "maxBuyTokenAmount": "A limit on the amount of tokens to buy.",
+                        "minConversionRate": "The minimal conversion rate. If actual rate        is lower, trade is canceled.",
+                        "recipientAddress": "Address to send bought tokens to.",
+                        "sellAmount": "Amount of tokens to sell.",
+                        "sellTokenAddress": "Token to sell.",
+                        "walletId": "The wallet ID to send part of the fees"
+                    },
+                    "return": "boughtAmount Amount of tokens bought."
+                }
+            }
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            },
+            "deployedBytecode": {
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            }
+        }
+    },
+    "sourceTreeHashHex": "0xac187a9f0d02cf3956d643de1a257bd80f6fb227b395c5f0c55e87c307dfa02e",
+    "sources": {
+        "./IKyberNetworkProxy.sol": {
+            "id": 32
+        }
+    },
+    "sourceCodes": {
+        "./IKyberNetworkProxy.sol": "/*\n\n  Copyright 2019 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.5.9;\n\n\ninterface IKyberNetworkProxy {\n\n    /// @dev Sells `sellTokenAddress` tokens for `buyTokenAddress` tokens.\n    /// @param sellTokenAddress Token to sell.\n    /// @param sellAmount Amount of tokens to sell.\n    /// @param buyTokenAddress Token to buy.\n    /// @param recipientAddress Address to send bought tokens to.\n    /// @param maxBuyTokenAmount A limit on the amount of tokens to buy.\n    /// @param minConversionRate The minimal conversion rate. If actual rate\n    ///        is lower, trade is canceled.\n    /// @param walletId The wallet ID to send part of the fees\n    /// @return boughtAmount Amount of tokens bought.\n    function trade(\n        address sellTokenAddress,\n        uint256 sellAmount,\n        address buyTokenAddress,\n        address payable recipientAddress,\n        uint256 maxBuyTokenAmount,\n        uint256 minConversionRate,\n        address walletId\n    )\n        external\n        payable\n        returns(uint256 boughtAmount);\n}\n"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.5.17+commit.d19bba13",
+        "settings": {
+            "remappings": [
+                "@0x/contracts-utils=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-utils",
+                "@0x/contracts-erc1155=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-erc1155",
+                "@0x/contracts-erc20=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-erc20",
+                "@0x/contracts-exchange-libs=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-exchange-libs",
+                "@0x/contracts-exchange=/Users/michaelzhu/monorepo/node_modules/@0x/contracts-exchange"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 1000000,
+                "details": {
+                    "yul": true,
+                    "deduplicate": true,
+                    "cse": true,
+                    "constantOptimizer": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}
