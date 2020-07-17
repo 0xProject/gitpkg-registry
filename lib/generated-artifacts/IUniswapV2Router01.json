@@ -1,0 +1,124 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "IUniswapV2Router01",
+    "compilerOutput": {
+        "abi": [
+            {
+                "constant": false,
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "amountIn",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "amountOutMin",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "address[]",
+                        "name": "path",
+                        "type": "address[]"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "to",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "deadline",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "swapExactTokensForTokens",
+                "outputs": [
+                    {
+                        "internalType": "uint256[]",
+                        "name": "amounts",
+                        "type": "uint256[]"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function"
+            }
+        ],
+        "devdoc": {
+            "methods": {
+                "swapExactTokensForTokens(uint256,uint256,address[],address,uint256)": {
+                    "details": "Swaps an exact amount of input tokens for as many output tokens as possible, along the route determined by the path.      The first element of path is the input token, the last is the output token, and any intermediate elements represent      intermediate pairs to trade through (if, for example, a direct pair does not exist).",
+                    "params": {
+                        "amountIn": "The amount of input tokens to send.",
+                        "amountOutMin": "The minimum amount of output tokens that must be received for the transaction not to revert.",
+                        "deadline": "Unix timestamp after which the transaction will revert.",
+                        "path": "An array of token addresses. path.length must be >= 2. Pools for each consecutive pair of addresses must exist and have liquidity.",
+                        "to": "Recipient of the output tokens."
+                    },
+                    "return": "amounts The input token amount and all subsequent output token amounts."
+                }
+            }
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            },
+            "deployedBytecode": {
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            }
+        }
+    },
+    "sourceTreeHashHex": "0x4b2b8c8e90d94a7c69db21e353afcf710921abfce82fa74dda81e0baab4617cc",
+    "sources": {
+        "./IUniswapV2Router01.sol": {
+            "id": 37
+        }
+    },
+    "sourceCodes": {
+        "./IUniswapV2Router01.sol": "/*\n\n  Copyright 2020 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.5.9;\n\n\ninterface IUniswapV2Router01 {\n\n    /// @dev Swaps an exact amount of input tokens for as many output tokens as possible, along the route determined by the path.\n    ///      The first element of path is the input token, the last is the output token, and any intermediate elements represent\n    ///      intermediate pairs to trade through (if, for example, a direct pair does not exist).\n    /// @param amountIn The amount of input tokens to send.\n    /// @param amountOutMin The minimum amount of output tokens that must be received for the transaction not to revert.\n    /// @param path An array of token addresses. path.length must be >= 2. Pools for each consecutive pair of addresses must exist and have liquidity.\n    /// @param to Recipient of the output tokens.\n    /// @param deadline Unix timestamp after which the transaction will revert.\n    /// @return amounts The input token amount and all subsequent output token amounts.\n    function swapExactTokensForTokens(\n        uint amountIn,\n        uint amountOutMin,\n        address[] calldata path,\n        address to,\n        uint deadline\n    ) external returns (uint[] memory amounts);\n}\n"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.5.17+commit.d19bba13",
+        "settings": {
+            "remappings": [
+                "@0x/contracts-utils=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-utils",
+                "@0x/contracts-erc1155=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-erc1155",
+                "@0x/contracts-erc20=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-erc20",
+                "@0x/contracts-exchange-libs=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-exchange-libs",
+                "@0x/contracts-exchange=/Users/michaelzhu/monorepo/node_modules/@0x/contracts-exchange"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 1000000,
+                "details": {
+                    "yul": true,
+                    "deduplicate": true,
+                    "cse": true,
+                    "constantOptimizer": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}

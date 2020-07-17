@@ -1,0 +1,86 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "IChainlinkOracle",
+    "compilerOutput": {
+        "abi": [
+            {
+                "constant": true,
+                "inputs": [],
+                "name": "latestAnswer",
+                "outputs": [
+                    {
+                        "internalType": "int256",
+                        "name": "",
+                        "type": "int256"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            }
+        ],
+        "devdoc": {
+            "methods": {}
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            },
+            "deployedBytecode": {
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            }
+        }
+    },
+    "sourceTreeHashHex": "0x0a1ced9a282379319383471d4293306178c957e081a66628add169327b0f1008",
+    "sources": {
+        "./IChainlinkOracle.sol": {
+            "id": 27
+        }
+    },
+    "sourceCodes": {
+        "./IChainlinkOracle.sol": "pragma solidity ^0.5.16;\n\ninterface IChainlinkOracle {\n    function latestAnswer()\n        external\n        view\n        returns (int256);\n}\n"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.5.17+commit.d19bba13",
+        "settings": {
+            "remappings": [
+                "@0x/contracts-utils=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-utils",
+                "@0x/contracts-erc1155=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-erc1155",
+                "@0x/contracts-erc20=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-erc20",
+                "@0x/contracts-exchange-libs=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-exchange-libs",
+                "@0x/contracts-exchange=/Users/michaelzhu/monorepo/node_modules/@0x/contracts-exchange"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 1000000,
+                "details": {
+                    "yul": true,
+                    "deduplicate": true,
+                    "cse": true,
+                    "constantOptimizer": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}

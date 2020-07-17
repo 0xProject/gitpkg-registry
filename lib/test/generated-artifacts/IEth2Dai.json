@@ -1,0 +1,118 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "IEth2Dai",
+    "compilerOutput": {
+        "abi": [
+            {
+                "constant": false,
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "fromToken",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "sellAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "toToken",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "minFillAmount",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "sellAllAmount",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "fillAmount",
+                        "type": "uint256"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function"
+            }
+        ],
+        "devdoc": {
+            "methods": {
+                "sellAllAmount(address,uint256,address,uint256)": {
+                    "details": "Sell `sellAmount` of `fromToken` token and receive `toToken` token.",
+                    "params": {
+                        "fromToken": "The token being sold.",
+                        "minFillAmount": "Minimum amount of `toToken` token to buy.",
+                        "sellAmount": "The amount of `fromToken` token being sold.",
+                        "toToken": "The token being bought."
+                    },
+                    "return": "fillAmount Amount of `toToken` bought."
+                }
+            }
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            },
+            "deployedBytecode": {
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            }
+        }
+    },
+    "sourceTreeHashHex": "0x96301d0cdf51572664b0e5974c2667e8896ec87db77104f6010f11214c76ae6c",
+    "sources": {
+        "./IEth2Dai.sol": {
+            "id": 32
+        }
+    },
+    "sourceCodes": {
+        "./IEth2Dai.sol": "/*\n\n  Copyright 2019 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.5.9;\n\n\ninterface IEth2Dai {\n\n    /// @dev Sell `sellAmount` of `fromToken` token and receive `toToken` token.\n    /// @param fromToken The token being sold.\n    /// @param sellAmount The amount of `fromToken` token being sold.\n    /// @param toToken The token being bought.\n    /// @param minFillAmount Minimum amount of `toToken` token to buy.\n    /// @return fillAmount Amount of `toToken` bought.\n    function sellAllAmount(\n        address fromToken,\n        uint256 sellAmount,\n        address toToken,\n        uint256 minFillAmount\n    )\n        external\n        returns (uint256 fillAmount);\n}\n"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.5.17+commit.d19bba13",
+        "settings": {
+            "remappings": [
+                "@0x/contracts-utils=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-utils",
+                "@0x/contracts-erc1155=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-erc1155",
+                "@0x/contracts-erc20=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-erc20",
+                "@0x/contracts-exchange-libs=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-exchange-libs",
+                "@0x/contracts-exchange=/Users/michaelzhu/monorepo/node_modules/@0x/contracts-exchange"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 1000000,
+                "details": {
+                    "yul": true,
+                    "deduplicate": true,
+                    "cse": true,
+                    "constantOptimizer": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}
