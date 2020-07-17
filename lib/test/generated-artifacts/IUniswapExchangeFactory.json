@@ -1,0 +1,103 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "IUniswapExchangeFactory",
+    "compilerOutput": {
+        "abi": [
+            {
+                "constant": true,
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "tokenAddress",
+                        "type": "address"
+                    }
+                ],
+                "name": "getExchange",
+                "outputs": [
+                    {
+                        "internalType": "address",
+                        "name": "",
+                        "type": "address"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            }
+        ],
+        "devdoc": {
+            "methods": {
+                "getExchange(address)": {
+                    "details": "Get the exchange for a token.",
+                    "params": {
+                        "tokenAddress": "The address of the token contract."
+                    }
+                }
+            }
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            },
+            "deployedBytecode": {
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            }
+        }
+    },
+    "sourceTreeHashHex": "0x2abe0d848e99c6c575e8768081764d4f02973c1ae36e356e0b0eaaf57a628120",
+    "sources": {
+        "./IUniswapExchangeFactory.sol": {
+            "id": 36
+        },
+        "./IUniswapExchange.sol": {
+            "id": 35
+        }
+    },
+    "sourceCodes": {
+        "./IUniswapExchangeFactory.sol": "/*\n\n  Copyright 2019 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.5.9;\n\nimport \"./IUniswapExchange.sol\";\n\n\ninterface IUniswapExchangeFactory {\n\n    /// @dev Get the exchange for a token.\n    /// @param tokenAddress The address of the token contract.\n    function getExchange(address tokenAddress)\n        external\n        view\n        returns (address);\n}\n",
+        "./IUniswapExchange.sol": "/*\n\n  Copyright 2019 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.5.9;\n\n\ninterface IUniswapExchange {\n\n    /// @dev Buys at least `minTokensBought` tokens with ETH and transfer them\n    ///      to `recipient`.\n    /// @param minTokensBought The minimum number of tokens to buy.\n    /// @param deadline Time when this order expires.\n    /// @param recipient Who to transfer the tokens to.\n    /// @return tokensBought Amount of tokens bought.\n    function ethToTokenTransferInput(\n        uint256 minTokensBought,\n        uint256 deadline,\n        address recipient\n    )\n        external\n        payable\n        returns (uint256 tokensBought);\n\n    /// @dev Buys at least `minEthBought` ETH with tokens.\n    /// @param tokensSold Amount of tokens to sell.\n    /// @param minEthBought The minimum amount of ETH to buy.\n    /// @param deadline Time when this order expires.\n    /// @return ethBought Amount of tokens bought.\n    function tokenToEthSwapInput(\n        uint256 tokensSold,\n        uint256 minEthBought,\n        uint256 deadline\n    )\n        external\n        returns (uint256 ethBought);\n\n    /// @dev Buys at least `minTokensBought` tokens with the exchange token\n    ///      and transfer them to `recipient`.\n    /// @param minTokensBought The minimum number of tokens to buy.\n    /// @param minEthBought The minimum amount of intermediate ETH to buy.\n    /// @param deadline Time when this order expires.\n    /// @param recipient Who to transfer the tokens to.\n    /// @param toTokenAddress The token being bought.\n    /// @return tokensBought Amount of tokens bought.\n    function tokenToTokenTransferInput(\n        uint256 tokensSold,\n        uint256 minTokensBought,\n        uint256 minEthBought,\n        uint256 deadline,\n        address recipient,\n        address toTokenAddress\n    )\n        external\n        returns (uint256 tokensBought);\n}\n"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.5.17+commit.d19bba13",
+        "settings": {
+            "remappings": [
+                "@0x/contracts-utils=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-utils",
+                "@0x/contracts-erc1155=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-erc1155",
+                "@0x/contracts-erc20=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-erc20",
+                "@0x/contracts-exchange-libs=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-exchange-libs",
+                "@0x/contracts-exchange=/Users/michaelzhu/monorepo/node_modules/@0x/contracts-exchange"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 1000000,
+                "details": {
+                    "yul": true,
+                    "deduplicate": true,
+                    "cse": true,
+                    "constantOptimizer": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}

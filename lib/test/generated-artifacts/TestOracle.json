@@ -1,0 +1,105 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "TestOracle",
+    "compilerOutput": {
+        "abi": [
+            {
+                "constant": true,
+                "inputs": [],
+                "name": "latestAnswer",
+                "outputs": [
+                    {
+                        "internalType": "int256",
+                        "name": "",
+                        "type": "int256"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "constant": false,
+                "inputs": [
+                    {
+                        "internalType": "int256",
+                        "name": "answer_",
+                        "type": "int256"
+                    }
+                ],
+                "name": "setLatestAnswer",
+                "outputs": [],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function"
+            }
+        ],
+        "devdoc": {
+            "methods": {}
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x608060405264056e9b3f0c60005534801561001957600080fd5b5060ab806100286000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c806304ea97b014603757806350d25bcd146053575b600080fd5b605160048036036020811015604b57600080fd5b5035606b565b005b60596070565b60408051918252519081900360200190f35b600055565b6000549056fea265627a7a7231582056d721dd4aabe646c63e45d41c0cb09027ce3580528365a87bcb6af1df14b10a64736f6c63430005110032",
+                "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH5 0x56E9B3F0C PUSH1 0x0 SSTORE CALLVALUE DUP1 ISZERO PUSH2 0x19 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0xAB DUP1 PUSH2 0x28 PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH1 0x32 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x4EA97B0 EQ PUSH1 0x37 JUMPI DUP1 PUSH4 0x50D25BCD EQ PUSH1 0x53 JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x51 PUSH1 0x4 DUP1 CALLDATASIZE SUB PUSH1 0x20 DUP2 LT ISZERO PUSH1 0x4B JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP CALLDATALOAD PUSH1 0x6B JUMP JUMPDEST STOP JUMPDEST PUSH1 0x59 PUSH1 0x70 JUMP JUMPDEST PUSH1 0x40 DUP1 MLOAD SWAP2 DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1 RETURN JUMPDEST PUSH1 0x0 SSTORE JUMP JUMPDEST PUSH1 0x0 SLOAD SWAP1 JUMP INVALID LOG2 PUSH6 0x627A7A723158 KECCAK256 JUMP 0xD7 0x21 0xDD 0x4A 0xAB 0xE6 CHAINID 0xC6 RETURNDATACOPY GASLIMIT 0xD4 SHR 0xC 0xB0 SWAP1 0x27 0xCE CALLDATALOAD DUP1 MSTORE DUP4 PUSH6 0xA87BCB6AF1DF EQ 0xB1 EXP PUSH5 0x736F6C6343 STOP SDIV GT STOP ORIGIN ",
+                "sourceMap": "76:309:9:-;;;151:11;126:36;;76:309;8:9:-1;5:2;;;30:1;27;20:12;5:2;76:309:9;;;;;;;"
+            },
+            "deployedBytecode": {
+                "linkReferences": {},
+                "object": "0x6080604052348015600f57600080fd5b506004361060325760003560e01c806304ea97b014603757806350d25bcd146053575b600080fd5b605160048036036020811015604b57600080fd5b5035606b565b005b60596070565b60408051918252519081900360200190f35b600055565b6000549056fea265627a7a7231582056d721dd4aabe646c63e45d41c0cb09027ce3580528365a87bcb6af1df14b10a64736f6c63430005110032",
+                "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH1 0x32 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x4EA97B0 EQ PUSH1 0x37 JUMPI DUP1 PUSH4 0x50D25BCD EQ PUSH1 0x53 JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x51 PUSH1 0x4 DUP1 CALLDATASIZE SUB PUSH1 0x20 DUP2 LT ISZERO PUSH1 0x4B JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP CALLDATALOAD PUSH1 0x6B JUMP JUMPDEST STOP JUMPDEST PUSH1 0x59 PUSH1 0x70 JUMP JUMPDEST PUSH1 0x40 DUP1 MLOAD SWAP2 DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1 RETURN JUMPDEST PUSH1 0x0 SSTORE JUMP JUMPDEST PUSH1 0x0 SLOAD SWAP1 JUMP INVALID LOG2 PUSH6 0x627A7A723158 KECCAK256 JUMP 0xD7 0x21 0xDD 0x4A 0xAB 0xE6 CHAINID 0xC6 RETURNDATACOPY GASLIMIT 0xD4 SHR 0xC 0xB0 SWAP1 0x27 0xCE CALLDATALOAD DUP1 MSTORE DUP4 PUSH6 0xA87BCB6AF1DF EQ 0xB1 EXP PUSH5 0x736F6C6343 STOP SDIV GT STOP ORIGIN ",
+                "sourceMap": "76:309:9:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;76:309:9;;;;;;;;;;;;;;;;;;;;;;;;169:95;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;169:95:9;;:::i;:::-;;270:113;;;:::i;:::-;;;;;;;;;;;;;;;;169:95;241:6;:16;169:95::o;270:113::-;341:6;370;270:113;:::o"
+            }
+        }
+    },
+    "sourceTreeHashHex": "0xf6466cdba10e5f986473613bd017f82e9583fd905e01f60fb96c0c5d17e30419",
+    "sources": {
+        "./TestOracle.sol": {
+            "id": 9
+        },
+        "./interfaces/IChainlinkOracle.sol": {
+            "id": 27
+        }
+    },
+    "sourceCodes": {
+        "./TestOracle.sol": "pragma solidity ^0.5.9;\n\nimport \"../src/interfaces/IChainlinkOracle.sol\";\n\n\ncontract TestOracle is\n    IChainlinkOracle\n{\n    int256 internal answer = 23330504460;\n\n    function setLatestAnswer(int256 answer_)\n        external\n    {\n        answer = answer_;\n    }\n\n    function latestAnswer()\n        external\n        view\n        returns (int256)\n    {\n        return answer;\n    }\n}\n",
+        "./interfaces/IChainlinkOracle.sol": "pragma solidity ^0.5.16;\n\ninterface IChainlinkOracle {\n    function latestAnswer()\n        external\n        view\n        returns (int256);\n}\n"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.5.17+commit.d19bba13",
+        "settings": {
+            "remappings": [
+                "@0x/contracts-utils=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-utils",
+                "@0x/contracts-erc1155=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-erc1155",
+                "@0x/contracts-erc20=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-erc20",
+                "@0x/contracts-exchange-libs=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-exchange-libs",
+                "@0x/contracts-exchange=/Users/michaelzhu/monorepo/node_modules/@0x/contracts-exchange"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 1000000,
+                "details": {
+                    "yul": true,
+                    "deduplicate": true,
+                    "cse": true,
+                    "constantOptimizer": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}
