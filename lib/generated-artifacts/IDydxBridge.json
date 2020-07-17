@@ -1,0 +1,70 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "IDydxBridge",
+    "compilerOutput": {
+        "abi": [],
+        "devdoc": {
+            "methods": {}
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a72315820a939b1917b1b91c0cd5403b25e9a25a10fc770c4365422d0241fe6f7f477fec364736f6c63430005110032",
+                "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x3E DUP1 PUSH1 0x1D PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH6 0x627A7A723158 KECCAK256 0xA9 CODECOPY 0xB1 SWAP2 PUSH28 0x1B91C0CD5403B25E9A25A10FC770C4365422D0241FE6F7F477FEC364 PUSH20 0x6F6C634300051100320000000000000000000000 ",
+                "sourceMap": "606:1131:30:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;606:1131:30;;;;;;;"
+            },
+            "deployedBytecode": {
+                "linkReferences": {},
+                "object": "0x6080604052600080fdfea265627a7a72315820a939b1917b1b91c0cd5403b25e9a25a10fc770c4365422d0241fe6f7f477fec364736f6c63430005110032",
+                "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH6 0x627A7A723158 KECCAK256 0xA9 CODECOPY 0xB1 SWAP2 PUSH28 0x1B91C0CD5403B25E9A25A10FC770C4365422D0241FE6F7F477FEC364 PUSH20 0x6F6C634300051100320000000000000000000000 ",
+                "sourceMap": "606:1131:30:-;;;;;"
+            }
+        }
+    },
+    "sourceTreeHashHex": "0x252ead86e7481bf83455542df6364902085153c4d19e3a50b0a205ca871ad134",
+    "sources": {
+        "./IDydxBridge.sol": {
+            "id": 30
+        }
+    },
+    "sourceCodes": {
+        "./IDydxBridge.sol": "/*\n\n  Copyright 2019 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.5.9;\n\n\ninterface IDydxBridge {\n\n    /// @dev This is the subset of `IDydx.ActionType` that are supported by the bridge.\n    enum BridgeActionType {\n        Deposit,                    // Deposit tokens into dydx account.\n        Withdraw                    // Withdraw tokens from dydx account.\n    }\n\n    struct BridgeAction {\n        BridgeActionType actionType;            // Action to run on dydx account.\n        uint256 accountIdx;                     // Index in `BridgeData.accountNumbers` for this action.\n        uint256 marketId;                       // Market to operate on.\n        uint256 conversionRateNumerator;        // Optional. If set, transfer amount is scaled by (conversionRateNumerator/conversionRateDenominator).\n        uint256 conversionRateDenominator;      // Optional. If set, transfer amount is scaled by (conversionRateNumerator/conversionRateDenominator).\n    }\n\n    struct BridgeData {\n        uint256[] accountNumbers;               // Account number used to identify the owner's specific account.\n        BridgeAction[] actions;                 // Actions to carry out on the owner's accounts.\n    }\n}\n"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.5.17+commit.d19bba13",
+        "settings": {
+            "remappings": [
+                "@0x/contracts-utils=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-utils",
+                "@0x/contracts-erc1155=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-erc1155",
+                "@0x/contracts-erc20=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-erc20",
+                "@0x/contracts-exchange-libs=/Users/michaelzhu/monorepo/contracts/asset-proxy/node_modules/@0x/contracts-exchange-libs",
+                "@0x/contracts-exchange=/Users/michaelzhu/monorepo/node_modules/@0x/contracts-exchange"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 1000000,
+                "details": {
+                    "yul": true,
+                    "deduplicate": true,
+                    "cse": true,
+                    "constantOptimizer": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}
