@@ -1,0 +1,142 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "IKyberNetworkProxy",
+    "compilerOutput": {
+        "abi": [
+            {
+                "constant": true,
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "src",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "dest",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "srcQty",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "platformFeeBps",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "bytes",
+                        "name": "hint",
+                        "type": "bytes"
+                    }
+                ],
+                "name": "getExpectedRateAfterFee",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "expectedRate",
+                        "type": "uint256"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "constant": true,
+                "inputs": [],
+                "name": "kyberHintHandler",
+                "outputs": [
+                    {
+                        "internalType": "address",
+                        "name": "",
+                        "type": "address"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "constant": true,
+                "inputs": [],
+                "name": "kyberNetwork",
+                "outputs": [
+                    {
+                        "internalType": "address",
+                        "name": "",
+                        "type": "address"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            }
+        ],
+        "devdoc": {
+            "methods": {}
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            },
+            "deployedBytecode": {
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            }
+        }
+    },
+    "sourceTreeHashHex": "0x5b622b16d197ddf705d2db9feee2ca9231f450bca016ba30c96f18fc83e22d40",
+    "sources": {
+        "./IKyberNetworkProxy.sol": {
+            "id": 19
+        }
+    },
+    "sourceCodes": {
+        "./IKyberNetworkProxy.sol": "/*\n\n  Copyright 2020 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.5.9;\n\n\ninterface IKyberNetworkProxy {\n\n    function kyberNetwork() external view returns (address);\n    function kyberHintHandler() external view returns (address);\n\n    function getExpectedRateAfterFee(\n        address src,\n        address dest,\n        uint256 srcQty,\n        uint256 platformFeeBps,\n        bytes calldata hint\n    ) external view returns (uint256 expectedRate);\n}\n"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.5.17+commit.d19bba13",
+        "settings": {
+            "remappings": [
+                "@0x/contracts-exchange-libs=/Users/michaelzhu/monorepo/packages/asset-swapper/node_modules/@0x/contracts-exchange-libs",
+                "@0x/contracts-utils=/Users/michaelzhu/monorepo/packages/asset-swapper/node_modules/@0x/contracts-utils",
+                "@0x/contracts-erc20=/Users/michaelzhu/monorepo/packages/asset-swapper/node_modules/@0x/contracts-erc20",
+                "@0x/contracts-exchange=/Users/michaelzhu/monorepo/packages/asset-swapper/node_modules/@0x/contracts-exchange",
+                "@0x/contracts-asset-proxy=/Users/michaelzhu/monorepo/packages/asset-swapper/node_modules/@0x/contracts-asset-proxy"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 1000000,
+                "details": {
+                    "yul": true,
+                    "deduplicate": true,
+                    "cse": true,
+                    "constantOptimizer": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}
