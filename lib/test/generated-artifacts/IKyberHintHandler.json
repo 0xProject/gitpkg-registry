@@ -1,0 +1,214 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "IKyberHintHandler",
+    "compilerOutput": {
+        "abi": [
+            {
+                "constant": true,
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "tokenDest",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "enum IKyberHintHandler.TradeType",
+                        "name": "ethToTokenType",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "bytes32[]",
+                        "name": "ethToTokenReserveIds",
+                        "type": "bytes32[]"
+                    },
+                    {
+                        "internalType": "uint256[]",
+                        "name": "ethToTokenSplits",
+                        "type": "uint256[]"
+                    }
+                ],
+                "name": "buildEthToTokenHint",
+                "outputs": [
+                    {
+                        "internalType": "bytes",
+                        "name": "hint",
+                        "type": "bytes"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "constant": true,
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "tokenSrc",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "enum IKyberHintHandler.TradeType",
+                        "name": "tokenToEthType",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "bytes32[]",
+                        "name": "tokenToEthReserveIds",
+                        "type": "bytes32[]"
+                    },
+                    {
+                        "internalType": "uint256[]",
+                        "name": "tokenToEthSplits",
+                        "type": "uint256[]"
+                    }
+                ],
+                "name": "buildTokenToEthHint",
+                "outputs": [
+                    {
+                        "internalType": "bytes",
+                        "name": "hint",
+                        "type": "bytes"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "constant": true,
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "tokenSrc",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "enum IKyberHintHandler.TradeType",
+                        "name": "tokenToEthType",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "bytes32[]",
+                        "name": "tokenToEthReserveIds",
+                        "type": "bytes32[]"
+                    },
+                    {
+                        "internalType": "uint256[]",
+                        "name": "tokenToEthSplits",
+                        "type": "uint256[]"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "tokenDest",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "enum IKyberHintHandler.TradeType",
+                        "name": "ethToTokenType",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "bytes32[]",
+                        "name": "ethToTokenReserveIds",
+                        "type": "bytes32[]"
+                    },
+                    {
+                        "internalType": "uint256[]",
+                        "name": "ethToTokenSplits",
+                        "type": "uint256[]"
+                    }
+                ],
+                "name": "buildTokenToTokenHint",
+                "outputs": [
+                    {
+                        "internalType": "bytes",
+                        "name": "hint",
+                        "type": "bytes"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "constant": false,
+                "inputs": [],
+                "name": "kyberStorage",
+                "outputs": [
+                    {
+                        "internalType": "address",
+                        "name": "",
+                        "type": "address"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function"
+            }
+        ],
+        "devdoc": {
+            "methods": {}
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            },
+            "deployedBytecode": {
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            }
+        }
+    },
+    "sourceTreeHashHex": "0x9a97379323f6271816679d488ffb027fb76203f208d41a470bdfd448cd09534e",
+    "sources": {
+        "./IKyberHintHandler.sol": {
+            "id": 8
+        }
+    },
+    "sourceCodes": {
+        "./IKyberHintHandler.sol": "/*\n\n  Copyright 2020 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.5.9;\n\n\ninterface IKyberHintHandler {\n\n    function kyberStorage() external returns (address);\n\n    enum TradeType {BestOfAll, MaskIn, MaskOut, Split}\n\n    function buildTokenToEthHint(\n        address tokenSrc,\n        TradeType tokenToEthType,\n        bytes32[] calldata tokenToEthReserveIds,\n        uint256[] calldata tokenToEthSplits\n    ) external view returns (bytes memory hint);\n\n    function buildEthToTokenHint(\n        address tokenDest,\n        TradeType ethToTokenType,\n        bytes32[] calldata ethToTokenReserveIds,\n        uint256[] calldata ethToTokenSplits\n    ) external view returns (bytes memory hint);\n\n    function buildTokenToTokenHint(\n        address tokenSrc,\n        TradeType tokenToEthType,\n        bytes32[] calldata tokenToEthReserveIds,\n        uint256[] calldata tokenToEthSplits,\n        address tokenDest,\n        TradeType ethToTokenType,\n        bytes32[] calldata ethToTokenReserveIds,\n        uint256[] calldata ethToTokenSplits\n    ) external view returns (bytes memory hint);\n}\n"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.5.17+commit.d19bba13",
+        "settings": {
+            "remappings": [
+                "@0x/contracts-exchange-libs=/Users/danielpyrathon/Desktop/Projects/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-exchange-libs",
+                "@0x/contracts-utils=/Users/danielpyrathon/Desktop/Projects/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-utils",
+                "@0x/contracts-erc20=/Users/danielpyrathon/Desktop/Projects/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-erc20",
+                "@0x/contracts-exchange=/Users/danielpyrathon/Desktop/Projects/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-exchange",
+                "@0x/contracts-asset-proxy=/Users/danielpyrathon/Desktop/Projects/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-asset-proxy"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 1000000,
+                "details": {
+                    "yul": true,
+                    "deduplicate": true,
+                    "cse": true,
+                    "constantOptimizer": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}
