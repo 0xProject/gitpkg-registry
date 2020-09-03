@@ -1,0 +1,112 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "IMStable",
+    "compilerOutput": {
+        "abi": [
+            {
+                "constant": true,
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "_input",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "_output",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "_quantity",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "getSwapOutput",
+                "outputs": [
+                    {
+                        "internalType": "bool",
+                        "name": "",
+                        "type": "bool"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "output",
+                        "type": "uint256"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            }
+        ],
+        "devdoc": {
+            "methods": {}
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            },
+            "deployedBytecode": {
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            }
+        }
+    },
+    "sourceTreeHashHex": "0xdbcf305aedd809e29ee58546476609abaacbc6d583562c78930484a9d69e900e",
+    "sources": {
+        "./IMStable.sol": {
+            "id": 22
+        }
+    },
+    "sourceCodes": {
+        "./IMStable.sol": "/*\n\n  Copyright 2019 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.5.9;\n\n\ninterface IMStable {\n\n    function getSwapOutput(\n        address _input,\n        address _output,\n        uint256 _quantity\n    )\n        external\n        view\n        returns (bool, string memory, uint256 output);\n}\n"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.5.17+commit.d19bba13",
+        "settings": {
+            "remappings": [
+                "@0x/contracts-exchange-libs=/home/merklejerk/code/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-exchange-libs",
+                "@0x/contracts-utils=/home/merklejerk/code/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-utils",
+                "@0x/contracts-erc20=/home/merklejerk/code/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-erc20",
+                "@0x/contracts-exchange=/home/merklejerk/code/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-exchange",
+                "@0x/contracts-asset-proxy=/home/merklejerk/code/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-asset-proxy"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 1000000,
+                "details": {
+                    "yul": true,
+                    "deduplicate": true,
+                    "cse": true,
+                    "constantOptimizer": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}
