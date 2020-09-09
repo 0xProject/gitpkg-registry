@@ -1,0 +1,70 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "ISynthetix",
+    "compilerOutput": {
+        "abi": [],
+        "devdoc": {
+            "methods": {}
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a723158202481730dfc0a2a140891e09fcc37ad5a14e2bfc550e5d0643936d00e06be300564736f6c63430005110032",
+                "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x3E DUP1 PUSH1 0x1D PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH6 0x627A7A723158 KECCAK256 0x24 DUP2 PUSH20 0xDFC0A2A140891E09FCC37AD5A14E2BFC550E5D0 PUSH5 0x3936D00E06 0xBE ADDRESS SDIV PUSH5 0x736F6C6343 STOP SDIV GT STOP ORIGIN ",
+                "sourceMap": "606:23:51:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;606:23:51;;;;;;;"
+            },
+            "deployedBytecode": {
+                "linkReferences": {},
+                "object": "0x6080604052600080fdfea265627a7a723158202481730dfc0a2a140891e09fcc37ad5a14e2bfc550e5d0643936d00e06be300564736f6c63430005110032",
+                "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH6 0x627A7A723158 KECCAK256 0x24 DUP2 PUSH20 0xDFC0A2A140891E09FCC37AD5A14E2BFC550E5D0 PUSH5 0x3936D00E06 0xBE ADDRESS SDIV PUSH5 0x736F6C6343 STOP SDIV GT STOP ORIGIN ",
+                "sourceMap": "606:23:51:-;;;;;"
+            }
+        }
+    },
+    "sourceTreeHashHex": "0x74fb0229bf30d457181f28ee859c76a58e567f719b1a2fc169dfa354283c62ef",
+    "sources": {
+        "./ISynthetix.sol": {
+            "id": 51
+        }
+    },
+    "sourceCodes": {
+        "./ISynthetix.sol": "/*\n\n  Copyright 2020 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.5.9;\n\n\ninterface ISynthetix {}\n\ninterface IExchanger {\n\n    function exchange(\n        address from,\n        bytes32 sourceCurrencyKey,\n        uint256 sourceAmount,\n        bytes32 destinationCurrencyKey,\n        address destinationAddress\n    )\n        external\n        view\n        returns (uint256);\n\n    function getAmountsForExchange(\n        uint256 sourceAmount,\n        bytes32 sourceCurrencyKey,\n        bytes32 destinationCurrencyKey\n    )\n        external\n        view\n        returns (uint256, uint256, uint256);\n}\n\ninterface ISynth {\n\n    function target()\n        external\n        view\n        returns (address);\n\n    function currencyKey()\n        external\n        view\n        returns (bytes32);\n}\n"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.5.17+commit.d19bba13",
+        "settings": {
+            "remappings": [
+                "@0x/contracts-exchange-libs=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/0x-monorepo/node_modules/@0x/contracts-exchange-libs",
+                "@0x/contracts-utils=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/0x-monorepo/node_modules/@0x/contracts-utils",
+                "@0x/contracts-erc20=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/0x-monorepo/node_modules/@0x/contracts-erc20",
+                "@0x/contracts-exchange=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/0x-monorepo/node_modules/@0x/contracts-exchange",
+                "@0x/contracts-asset-proxy=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/0x-monorepo/node_modules/@0x/contracts-asset-proxy"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 1000000,
+                "details": {
+                    "yul": true,
+                    "deduplicate": true,
+                    "cse": true,
+                    "constantOptimizer": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}
