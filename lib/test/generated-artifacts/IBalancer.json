@@ -1,0 +1,241 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "IBalancer",
+    "compilerOutput": {
+        "abi": [
+            {
+                "constant": true,
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenBalanceIn",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenWeightIn",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenBalanceOut",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenWeightOut",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenAmountOut",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "swapFee",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "calcInGivenOut",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenAmountIn",
+                        "type": "uint256"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "pure",
+                "type": "function"
+            },
+            {
+                "constant": true,
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenBalanceIn",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenWeightIn",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenBalanceOut",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenWeightOut",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenAmountIn",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "swapFee",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "calcOutGivenIn",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenAmountOut",
+                        "type": "uint256"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "pure",
+                "type": "function"
+            },
+            {
+                "constant": true,
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "token",
+                        "type": "address"
+                    }
+                ],
+                "name": "getBalance",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "constant": true,
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "token",
+                        "type": "address"
+                    }
+                ],
+                "name": "getDenormalizedWeight",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "constant": true,
+                "inputs": [],
+                "name": "getSwapFee",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "constant": true,
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "t",
+                        "type": "address"
+                    }
+                ],
+                "name": "isBound",
+                "outputs": [
+                    {
+                        "internalType": "bool",
+                        "name": "",
+                        "type": "bool"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            }
+        ],
+        "devdoc": {
+            "methods": {}
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            },
+            "deployedBytecode": {
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            }
+        }
+    },
+    "sourceTreeHashHex": "0xa8be7624802f1162840b3d4b8efab17f632ff27e72dfb1fa975d720c935dedc2",
+    "sources": {
+        "./IBalancer.sol": {
+            "id": 17
+        }
+    },
+    "sourceCodes": {
+        "./IBalancer.sol": "/*\n\n  Copyright 2019 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.5.9;\n\n\ninterface IBalancer {\n    function isBound(address t) external view returns (bool);\n    function getDenormalizedWeight(address token) external view returns (uint256);\n    function getBalance(address token) external view returns (uint256);\n    function getSwapFee() external view returns (uint256);\n    function calcOutGivenIn(\n        uint256 tokenBalanceIn,\n        uint256 tokenWeightIn,\n        uint256 tokenBalanceOut,\n        uint256 tokenWeightOut,\n        uint256 tokenAmountIn,\n        uint256 swapFee\n    ) external pure returns (uint256 tokenAmountOut);\n    function calcInGivenOut(\n        uint256 tokenBalanceIn,\n        uint256 tokenWeightIn,\n        uint256 tokenBalanceOut,\n        uint256 tokenWeightOut,\n        uint256 tokenAmountOut,\n        uint256 swapFee\n    ) external pure returns (uint256 tokenAmountIn);\n}\n"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.5.17+commit.d19bba13",
+        "settings": {
+            "remappings": [
+                "@0x/contracts-exchange-libs=/home/gene/dev/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-exchange-libs",
+                "@0x/contracts-utils=/home/gene/dev/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-utils",
+                "@0x/contracts-erc20=/home/gene/dev/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-erc20",
+                "@0x/contracts-exchange=/home/gene/dev/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-exchange",
+                "@0x/contracts-asset-proxy=/home/gene/dev/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-asset-proxy"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 1000000,
+                "details": {
+                    "yul": true,
+                    "deduplicate": true,
+                    "cse": true,
+                    "constantOptimizer": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}
