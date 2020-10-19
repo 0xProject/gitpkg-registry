@@ -1,0 +1,70 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "IKyberNetwork",
+    "compilerOutput": {
+        "abi": [],
+        "devdoc": {
+            "methods": {}
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a72315820b5b7fc215e59e9a3386916d6fb17df9fc176affaabebed3a7d5775f65a0f41a964736f6c63430005110032",
+                "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x3E DUP1 PUSH1 0x1D PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH6 0x627A7A723158 KECCAK256 0xB5 0xB7 0xFC 0x21 0x5E MSIZE 0xE9 LOG3 CODESIZE PUSH10 0x16D6FB17DF9FC176AFFA 0xAB 0xEB 0xED GASPRICE PUSH30 0x5775F65A0F41A964736F6C63430005110032000000000000000000000000 ",
+                "sourceMap": "635:29:47:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;635:29:47;;;;;;;"
+            },
+            "deployedBytecode": {
+                "linkReferences": {},
+                "object": "0x6080604052600080fdfea265627a7a72315820b5b7fc215e59e9a3386916d6fb17df9fc176affaabebed3a7d5775f65a0f41a964736f6c63430005110032",
+                "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH6 0x627A7A723158 KECCAK256 0xB5 0xB7 0xFC 0x21 0x5E MSIZE 0xE9 LOG3 CODESIZE PUSH10 0x16D6FB17DF9FC176AFFA 0xAB 0xEB 0xED GASPRICE PUSH30 0x5775F65A0F41A964736F6C63430005110032000000000000000000000000 ",
+                "sourceMap": "635:29:47:-;;;;;"
+            }
+        }
+    },
+    "sourceTreeHashHex": "0x905911dcc9db3e0cd68def659847a4a313cf9ea7fcbf020e63cb5c29c4c9093d",
+    "sources": {
+        "./IKyberNetwork.sol": {
+            "id": 47
+        }
+    },
+    "sourceCodes": {
+        "./IKyberNetwork.sol": "/*\n\n  Copyright 2020 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.5.9;\n\n// Keepin everything together\ninterface IKyberNetwork {\n\n\n}\n\n\ninterface IKyberNetworkProxy {\n\n    function getExpectedRateAfterFee(\n        address src,\n        address dest,\n        uint256 srcQty,\n        uint256 platformFeeBps,\n        bytes calldata hint\n    )\n        external\n        view\n        returns (uint256 expectedRate);\n}\n\ninterface IKyberHintHandler {\n\n    enum TradeType {BestOfAll, MaskIn, MaskOut, Split}\n\n    function buildTokenToEthHint(\n        address tokenSrc,\n        TradeType tokenToEthType,\n        bytes32[] calldata tokenToEthReserveIds,\n        uint256[] calldata tokenToEthSplits\n    )\n        external\n        view\n        returns (bytes memory hint);\n\n    function buildEthToTokenHint(\n        address tokenDest,\n        TradeType ethToTokenType,\n        bytes32[] calldata ethToTokenReserveIds,\n        uint256[] calldata ethToTokenSplits\n    )\n        external\n        view\n        returns (bytes memory hint);\n\n    function buildTokenToTokenHint(\n        address tokenSrc,\n        TradeType tokenToEthType,\n        bytes32[] calldata tokenToEthReserveIds,\n        uint256[] calldata tokenToEthSplits,\n        address tokenDest,\n        TradeType ethToTokenType,\n        bytes32[] calldata ethToTokenReserveIds,\n        uint256[] calldata ethToTokenSplits\n    )\n        external\n        view\n        returns (bytes memory hint);\n}\n"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.5.17+commit.d19bba13",
+        "settings": {
+            "remappings": [
+                "@0x/contracts-exchange-libs=/Users/danielpyrathon/Desktop/Projects/0x-monorepo/node_modules/@0x/contracts-exchange-libs",
+                "@0x/contracts-utils=/Users/danielpyrathon/Desktop/Projects/0x-monorepo/node_modules/@0x/contracts-utils",
+                "@0x/contracts-erc20=/Users/danielpyrathon/Desktop/Projects/0x-monorepo/node_modules/@0x/contracts-erc20",
+                "@0x/contracts-exchange=/Users/danielpyrathon/Desktop/Projects/0x-monorepo/node_modules/@0x/contracts-exchange",
+                "@0x/contracts-asset-proxy=/Users/danielpyrathon/Desktop/Projects/0x-monorepo/node_modules/@0x/contracts-asset-proxy"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 62500,
+                "details": {
+                    "yul": true,
+                    "deduplicate": true,
+                    "cse": true,
+                    "constantOptimizer": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}
