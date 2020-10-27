@@ -1,0 +1,137 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "DummyLiquidityProviderRegistry",
+    "compilerOutput": {
+        "abi": [
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "xToken",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "yToken",
+                        "type": "address"
+                    }
+                ],
+                "name": "getLiquidityProviderForMarket",
+                "outputs": [
+                    {
+                        "internalType": "address",
+                        "name": "poolAddress",
+                        "type": "address"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "xToken",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "yToken",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "poolAddress",
+                        "type": "address"
+                    }
+                ],
+                "name": "setLiquidityProviderForMarket",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            }
+        ],
+        "devdoc": {
+            "kind": "dev",
+            "methods": {
+                "getLiquidityProviderForMarket(address,address)": {
+                    "details": "Returns the address of pool for a market given market (xAsset, yAsset), or reverts if pool does not exist.",
+                    "params": {
+                        "xToken": "First asset managed by pool.",
+                        "yToken": "Second asset managed by pool."
+                    },
+                    "returns": {
+                        "poolAddress": "Address of pool."
+                    }
+                },
+                "setLiquidityProviderForMarket(address,address,address)": {
+                    "details": "Sets address of pool for a market given market (xAsset, yAsset).",
+                    "params": {
+                        "poolAddress": "Address of pool.",
+                        "xToken": "First asset managed by pool.",
+                        "yToken": "Second asset managed by pool."
+                    }
+                }
+            },
+            "version": 1
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x608060405234801561001057600080fd5b50610299806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c8063153f59971461003b57806384da8d1e14610064575b600080fd5b61004e610049366004610192565b610079565b60405161005b919061020b565b60405180910390f35b6100776100723660046101c6565b6100f2565b005b73ffffffffffffffffffffffffffffffffffffffff808316600090815260208181526040808320858516845290915290205416806100ec576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016100e39061022c565b60405180910390fd5b92915050565b73ffffffffffffffffffffffffffffffffffffffff92831660008181526020818152604080832095871683529481528482208054969094167fffffffffffffffffffffffff0000000000000000000000000000000000000000968716811790945581815284822092825291909152919091208054909216179055565b803573ffffffffffffffffffffffffffffffffffffffff811681146100ec57600080fd5b600080604083850312156101a4578182fd5b6101ae848461016e565b91506101bd846020850161016e565b90509250929050565b6000806000606084860312156101da578081fd5b6101e4858561016e565b92506101f3856020860161016e565b9150610202856040860161016e565b90509250925092565b73ffffffffffffffffffffffffffffffffffffffff91909116815260200190565b6020808252601c908201527f52656769737472792f4d41524b45545f504149525f4e4f545f5345540000000060408201526060019056fea26469706673582212209d0526f478dad647db1754496df3245548185e7654a25b3615d88d83cf9b08bb64736f6c634300060c0033",
+                "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH2 0x10 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH2 0x299 DUP1 PUSH2 0x20 PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH2 0x10 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH2 0x36 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x153F5997 EQ PUSH2 0x3B JUMPI DUP1 PUSH4 0x84DA8D1E EQ PUSH2 0x64 JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH2 0x4E PUSH2 0x49 CALLDATASIZE PUSH1 0x4 PUSH2 0x192 JUMP JUMPDEST PUSH2 0x79 JUMP JUMPDEST PUSH1 0x40 MLOAD PUSH2 0x5B SWAP2 SWAP1 PUSH2 0x20B JUMP JUMPDEST PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 RETURN JUMPDEST PUSH2 0x77 PUSH2 0x72 CALLDATASIZE PUSH1 0x4 PUSH2 0x1C6 JUMP JUMPDEST PUSH2 0xF2 JUMP JUMPDEST STOP JUMPDEST PUSH20 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF DUP1 DUP4 AND PUSH1 0x0 SWAP1 DUP2 MSTORE PUSH1 0x20 DUP2 DUP2 MSTORE PUSH1 0x40 DUP1 DUP4 KECCAK256 DUP6 DUP6 AND DUP5 MSTORE SWAP1 SWAP2 MSTORE SWAP1 KECCAK256 SLOAD AND DUP1 PUSH2 0xEC JUMPI PUSH1 0x40 MLOAD PUSH32 0x8C379A000000000000000000000000000000000000000000000000000000000 DUP2 MSTORE PUSH1 0x4 ADD PUSH2 0xE3 SWAP1 PUSH2 0x22C JUMP JUMPDEST PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 REVERT JUMPDEST SWAP3 SWAP2 POP POP JUMP JUMPDEST PUSH20 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF SWAP3 DUP4 AND PUSH1 0x0 DUP2 DUP2 MSTORE PUSH1 0x20 DUP2 DUP2 MSTORE PUSH1 0x40 DUP1 DUP4 KECCAK256 SWAP6 DUP8 AND DUP4 MSTORE SWAP5 DUP2 MSTORE DUP5 DUP3 KECCAK256 DUP1 SLOAD SWAP7 SWAP1 SWAP5 AND PUSH32 0xFFFFFFFFFFFFFFFFFFFFFFFF0000000000000000000000000000000000000000 SWAP7 DUP8 AND DUP2 OR SWAP1 SWAP5 SSTORE DUP2 DUP2 MSTORE DUP5 DUP3 KECCAK256 SWAP3 DUP3 MSTORE SWAP2 SWAP1 SWAP2 MSTORE SWAP2 SWAP1 SWAP2 KECCAK256 DUP1 SLOAD SWAP1 SWAP3 AND OR SWAP1 SSTORE JUMP JUMPDEST DUP1 CALLDATALOAD PUSH20 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF DUP2 AND DUP2 EQ PUSH2 0xEC JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x0 DUP1 PUSH1 0x40 DUP4 DUP6 SUB SLT ISZERO PUSH2 0x1A4 JUMPI DUP2 DUP3 REVERT JUMPDEST PUSH2 0x1AE DUP5 DUP5 PUSH2 0x16E JUMP JUMPDEST SWAP2 POP PUSH2 0x1BD DUP5 PUSH1 0x20 DUP6 ADD PUSH2 0x16E JUMP JUMPDEST SWAP1 POP SWAP3 POP SWAP3 SWAP1 POP JUMP JUMPDEST PUSH1 0x0 DUP1 PUSH1 0x0 PUSH1 0x60 DUP5 DUP7 SUB SLT ISZERO PUSH2 0x1DA JUMPI DUP1 DUP2 REVERT JUMPDEST PUSH2 0x1E4 DUP6 DUP6 PUSH2 0x16E JUMP JUMPDEST SWAP3 POP PUSH2 0x1F3 DUP6 PUSH1 0x20 DUP7 ADD PUSH2 0x16E JUMP JUMPDEST SWAP2 POP PUSH2 0x202 DUP6 PUSH1 0x40 DUP7 ADD PUSH2 0x16E JUMP JUMPDEST SWAP1 POP SWAP3 POP SWAP3 POP SWAP3 JUMP JUMPDEST PUSH20 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF SWAP2 SWAP1 SWAP2 AND DUP2 MSTORE PUSH1 0x20 ADD SWAP1 JUMP JUMPDEST PUSH1 0x20 DUP1 DUP3 MSTORE PUSH1 0x1C SWAP1 DUP3 ADD MSTORE PUSH32 0x52656769737472792F4D41524B45545F504149525F4E4F545F53455400000000 PUSH1 0x40 DUP3 ADD MSTORE PUSH1 0x60 ADD SWAP1 JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SWAP14 SDIV 0x26 DELEGATECALL PUSH25 0xDAD647DB1754496DF3245548185E7654A25B3615D88D83CF9B ADDMOD 0xBB PUSH5 0x736F6C6343 STOP MOD 0xC STOP CALLER ",
+                "sourceMap": "58:1278:32:-:0;;;;;;;;;;;;;;;;;;;"
+            },
+            "deployedBytecode": {
+                "immutableReferences": {},
+                "linkReferences": {},
+                "object": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c8063153f59971461003b57806384da8d1e14610064575b600080fd5b61004e610049366004610192565b610079565b60405161005b919061020b565b60405180910390f35b6100776100723660046101c6565b6100f2565b005b73ffffffffffffffffffffffffffffffffffffffff808316600090815260208181526040808320858516845290915290205416806100ec576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016100e39061022c565b60405180910390fd5b92915050565b73ffffffffffffffffffffffffffffffffffffffff92831660008181526020818152604080832095871683529481528482208054969094167fffffffffffffffffffffffff0000000000000000000000000000000000000000968716811790945581815284822092825291909152919091208054909216179055565b803573ffffffffffffffffffffffffffffffffffffffff811681146100ec57600080fd5b600080604083850312156101a4578182fd5b6101ae848461016e565b91506101bd846020850161016e565b90509250929050565b6000806000606084860312156101da578081fd5b6101e4858561016e565b92506101f3856020860161016e565b9150610202856040860161016e565b90509250925092565b73ffffffffffffffffffffffffffffffffffffffff91909116815260200190565b6020808252601c908201527f52656769737472792f4d41524b45545f504149525f4e4f545f5345540000000060408201526060019056fea26469706673582212209d0526f478dad647db1754496df3245548185e7654a25b3615d88d83cf9b08bb64736f6c634300060c0033",
+                "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH2 0x10 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH2 0x36 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x153F5997 EQ PUSH2 0x3B JUMPI DUP1 PUSH4 0x84DA8D1E EQ PUSH2 0x64 JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH2 0x4E PUSH2 0x49 CALLDATASIZE PUSH1 0x4 PUSH2 0x192 JUMP JUMPDEST PUSH2 0x79 JUMP JUMPDEST PUSH1 0x40 MLOAD PUSH2 0x5B SWAP2 SWAP1 PUSH2 0x20B JUMP JUMPDEST PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 RETURN JUMPDEST PUSH2 0x77 PUSH2 0x72 CALLDATASIZE PUSH1 0x4 PUSH2 0x1C6 JUMP JUMPDEST PUSH2 0xF2 JUMP JUMPDEST STOP JUMPDEST PUSH20 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF DUP1 DUP4 AND PUSH1 0x0 SWAP1 DUP2 MSTORE PUSH1 0x20 DUP2 DUP2 MSTORE PUSH1 0x40 DUP1 DUP4 KECCAK256 DUP6 DUP6 AND DUP5 MSTORE SWAP1 SWAP2 MSTORE SWAP1 KECCAK256 SLOAD AND DUP1 PUSH2 0xEC JUMPI PUSH1 0x40 MLOAD PUSH32 0x8C379A000000000000000000000000000000000000000000000000000000000 DUP2 MSTORE PUSH1 0x4 ADD PUSH2 0xE3 SWAP1 PUSH2 0x22C JUMP JUMPDEST PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 REVERT JUMPDEST SWAP3 SWAP2 POP POP JUMP JUMPDEST PUSH20 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF SWAP3 DUP4 AND PUSH1 0x0 DUP2 DUP2 MSTORE PUSH1 0x20 DUP2 DUP2 MSTORE PUSH1 0x40 DUP1 DUP4 KECCAK256 SWAP6 DUP8 AND DUP4 MSTORE SWAP5 DUP2 MSTORE DUP5 DUP3 KECCAK256 DUP1 SLOAD SWAP7 SWAP1 SWAP5 AND PUSH32 0xFFFFFFFFFFFFFFFFFFFFFFFF0000000000000000000000000000000000000000 SWAP7 DUP8 AND DUP2 OR SWAP1 SWAP5 SSTORE DUP2 DUP2 MSTORE DUP5 DUP3 KECCAK256 SWAP3 DUP3 MSTORE SWAP2 SWAP1 SWAP2 MSTORE SWAP2 SWAP1 SWAP2 KECCAK256 DUP1 SLOAD SWAP1 SWAP3 AND OR SWAP1 SSTORE JUMP JUMPDEST DUP1 CALLDATALOAD PUSH20 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF DUP2 AND DUP2 EQ PUSH2 0xEC JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x0 DUP1 PUSH1 0x40 DUP4 DUP6 SUB SLT ISZERO PUSH2 0x1A4 JUMPI DUP2 DUP3 REVERT JUMPDEST PUSH2 0x1AE DUP5 DUP5 PUSH2 0x16E JUMP JUMPDEST SWAP2 POP PUSH2 0x1BD DUP5 PUSH1 0x20 DUP6 ADD PUSH2 0x16E JUMP JUMPDEST SWAP1 POP SWAP3 POP SWAP3 SWAP1 POP JUMP JUMPDEST PUSH1 0x0 DUP1 PUSH1 0x0 PUSH1 0x60 DUP5 DUP7 SUB SLT ISZERO PUSH2 0x1DA JUMPI DUP1 DUP2 REVERT JUMPDEST PUSH2 0x1E4 DUP6 DUP6 PUSH2 0x16E JUMP JUMPDEST SWAP3 POP PUSH2 0x1F3 DUP6 PUSH1 0x20 DUP7 ADD PUSH2 0x16E JUMP JUMPDEST SWAP2 POP PUSH2 0x202 DUP6 PUSH1 0x40 DUP7 ADD PUSH2 0x16E JUMP JUMPDEST SWAP1 POP SWAP3 POP SWAP3 POP SWAP3 JUMP JUMPDEST PUSH20 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF SWAP2 SWAP1 SWAP2 AND DUP2 MSTORE PUSH1 0x20 ADD SWAP1 JUMP JUMPDEST PUSH1 0x20 DUP1 DUP3 MSTORE PUSH1 0x1C SWAP1 DUP3 ADD MSTORE PUSH32 0x52656769737472792F4D41524B45545F504149525F4E4F545F53455400000000 PUSH1 0x40 DUP3 ADD MSTORE PUSH1 0x60 ADD SWAP1 JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SWAP14 SDIV 0x26 DELEGATECALL PUSH25 0xDAD647DB1754496DF3245548185E7654A25B3615D88D83CF9B ADDMOD 0xBB PUSH5 0x736F6C6343 STOP MOD 0xC STOP CALLER ",
+                "sourceMap": "58:1278:32:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;997:337;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;467:256;;;;;;:::i;:::-;;:::i;:::-;;997:337;1186:21;;;;1137:19;1186:21;;;;;;;;;;;:29;;;;;;;;;;;;1246:27;1225:102;;;;;;;;;;;;:::i;:::-;;;;;;;;;997:337;;;;:::o;467:256::-;620:21;;;;:13;:21;;;;;;;;;;;:29;;;;;;;;;;;:43;;;;;;;;;;;;;;;673:21;;;;;;:29;;;;;;;;;;;:43;;;;;;;;467:256::o;5:130:-1:-;72:20;;2465:42;2454:54;;2579:35;;2569:2;;2628:1;;2618:12;142:366;;;263:2;251:9;242:7;238:23;234:32;231:2;;;-1:-1;;269:12;231:2;331:53;376:7;352:22;331:53;:::i;:::-;321:63;;439:53;484:7;421:2;464:9;460:22;439:53;:::i;:::-;429:63;;225:283;;;;;:::o;515:491::-;;;;653:2;641:9;632:7;628:23;624:32;621:2;;;-1:-1;;659:12;621:2;721:53;766:7;742:22;721:53;:::i;:::-;711:63;;829:53;874:7;811:2;854:9;850:22;829:53;:::i;:::-;819:63;;937:53;982:7;919:2;962:9;958:22;937:53;:::i;:::-;927:63;;615:391;;;;;:::o;1470:222::-;2465:42;2454:54;;;;1084:37;;1597:2;1582:18;;1568:124::o;1699:416::-;1899:2;1913:47;;;1358:2;1884:18;;;2226:19;1394:30;2266:14;;;1374:51;1444:12;;;1870:245::o"
+            }
+        }
+    },
+    "sourceTreeHashHex": "0x1b907c3775c5ce223396e873d00fea0a4fd46f2754d97da4e0b8788bf4899641",
+    "sources": {
+        "./DummyLiquidityProviderRegistry.sol": {
+            "id": 32
+        }
+    },
+    "sourceCodes": {
+        "./DummyLiquidityProviderRegistry.sol": "pragma solidity ^0.6;\npragma experimental ABIEncoderV2;\n\n\ncontract DummyLiquidityProviderRegistry\n{\n    address private constant NULL_ADDRESS = address(0x0);\n\n    mapping (address => mapping (address => address)) internal _gAddressBook;\n\n    /// @dev Sets address of pool for a market given market (xAsset, yAsset).\n    /// @param xToken First asset managed by pool.\n    /// @param yToken Second asset managed by pool.\n    /// @param poolAddress Address of pool.\n    function setLiquidityProviderForMarket(\n        address xToken,\n        address yToken,\n        address poolAddress\n    )\n        external\n    {\n        _gAddressBook[xToken][yToken] = poolAddress;\n        _gAddressBook[yToken][xToken] = poolAddress;\n    }\n\n    /// @dev Returns the address of pool for a market given market (xAsset, yAsset), or reverts if pool does not exist.\n    /// @param xToken First asset managed by pool.\n    /// @param yToken Second asset managed by pool.\n    /// @return poolAddress Address of pool.\n    function getLiquidityProviderForMarket(\n        address xToken,\n        address yToken\n    )\n        external\n        view\n        returns (address poolAddress)\n    {\n        poolAddress = _gAddressBook[xToken][yToken];\n        require(\n            poolAddress != NULL_ADDRESS,\n            \"Registry/MARKET_PAIR_NOT_SET\"\n        );\n    }\n}\n"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.6.12+commit.27d51765",
+        "settings": {
+            "remappings": [
+                "@0x/contracts-utils=/home/gene/dev/0x/protocol/packages/asset-swapper/node_modules/@0x/contracts-utils",
+                "@0x/contracts-erc20=/home/gene/dev/0x/protocol/packages/asset-swapper/node_modules/@0x/contracts-erc20"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 62500,
+                "details": {
+                    "yul": true,
+                    "deduplicate": true,
+                    "cse": true,
+                    "constantOptimizer": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}
