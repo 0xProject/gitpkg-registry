@@ -1,0 +1,71 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "ICoFiX",
+    "compilerOutput": {
+        "abi": [],
+        "devdoc": {
+            "kind": "dev",
+            "methods": {},
+            "version": 1
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            },
+            "deployedBytecode": {
+                "immutableReferences": {},
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            }
+        }
+    },
+    "sourceTreeHashHex": "0x73f72ce85ee10e496947157f88c3b41154f36b2d516b905b8743e0e0d23651d2",
+    "sources": {
+        "./ICoFiX.sol": {
+            "id": 21
+        }
+    },
+    "sourceCodes": {
+        "./ICoFiX.sol": "/*\n\n  Copyright 2020 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.6;\npragma experimental ABIEncoderV2;\n\ninterface ICoFiX {}\n\ninterface ICoFiXPair {\n\n    struct OraclePrice {\n        uint256 ethAmount;\n        uint256 erc20Amount;\n        uint256 blockNum;\n        uint256 K;\n        uint256 theta;\n    }\n\n    function calcInNeededToken0(uint256 amountOut, OraclePrice calldata _op)\n        external\n        view\n        returns (uint256 amountInNeeded, uint256 fee);\n\n    function calcInNeededToken1(uint256 amountOut, OraclePrice calldata _op)\n        external\n        view\n        returns (uint256 amountInNeeded, uint256 fee);\n\n    function calcOutToken0(uint256 amountIn, OraclePrice calldata _op)\n        external\n        view\n        returns (uint256 amountOut, uint256 fee);\n\n    function calcOutToken1(uint256 amountIn, OraclePrice calldata _op)\n        external\n        view\n        returns (uint256 amountOut, uint256 fee);\n}\n\ninterface ICoFiXController {\n\n\n    /// @dev Returns the NEST Vote Factory\n    function voteFactory()\n        external\n        view\n        returns (address);\n\n    /// @dev Returns the k info for oracle and price impact\n    function getKInfo(address tokenAddress)\n        external\n        view\n        returns (uint32 k, uint32 updatedAt, uint32 theta);\n\n    function calcImpactCostFor_SWAP_WITH_EXACT(\n        address token,\n        bytes memory data,\n        uint256 ethAmount,\n        uint256 erc20Amount\n    )\n        external\n        pure\n        returns (uint256);\n\n    function calcImpactCostFor_SWAP_FOR_EXACT(\n        address token,\n        bytes memory data,\n        uint256 ethAmount,\n        uint256 erc20Amount\n    )\n        external\n        pure\n        returns (uint256);\n}\n\ninterface ICoFiXFactory {\n\n    /// @dev Returns the Controller\n    function getController()\n        external\n        view\n        returns (address);\n\n    /// @dev Returns the Pool for the token pair\n    function getPair(address token)\n        external\n        view\n        returns (address);\n}\n\ninterface INestVoteFactory {\n\n    function checkAddress(string calldata name)\n        external\n        view\n        returns (address);\n}\n\ninterface INestOracle {\n\n    function checkPriceNow(address tokenAddress)\n        external\n        view\n        returns (uint256 ethAmount, uint256 erc20Amount, uint256 blockNum);\n\n    function checkPriceCost()\n        external\n        view\n        returns (uint256);\n}\n"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.6.12+commit.27d51765",
+        "settings": {
+            "remappings": [
+                "@0x/contracts-erc20=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-erc20",
+                "@0x/contracts-utils=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-utils",
+                "@0x/contracts-zero-ex=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-zero-ex"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 62500,
+                "details": {
+                    "yul": true,
+                    "deduplicate": true,
+                    "cse": true,
+                    "constantOptimizer": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}
