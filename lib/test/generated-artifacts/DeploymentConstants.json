@@ -1,0 +1,77 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "DeploymentConstants",
+    "compilerOutput": {
+        "abi": [],
+        "devdoc": {
+            "kind": "dev",
+            "methods": {},
+            "stateVariables": {
+                "WETH_ADDRESS": {
+                    "details": "Mainnet address of the WETH contract."
+                }
+            },
+            "version": 1
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212209a514c256b6c1a928302e86c715736c6fede51ec9189d0610584af4a8342e0c764736f6c634300060c0033",
+                "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x3F DUP1 PUSH1 0x1D PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SWAP11 MLOAD 0x4C 0x25 PUSH12 0x6C1A928302E86C715736C6FE 0xDE MLOAD 0xEC SWAP2 DUP10 0xD0 PUSH2 0x584 0xAF 0x4A DUP4 TIMESTAMP 0xE0 0xC7 PUSH5 0x736F6C6343 STOP MOD 0xC STOP CALLER ",
+                "sourceMap": "643:552:7:-:0;;;;;;;;;;;;;;;;;;;"
+            },
+            "deployedBytecode": {
+                "immutableReferences": {},
+                "linkReferences": {},
+                "object": "0x6080604052600080fdfea26469706673582212209a514c256b6c1a928302e86c715736c6fede51ec9189d0610584af4a8342e0c764736f6c634300060c0033",
+                "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SWAP11 MLOAD 0x4C 0x25 PUSH12 0x6C1A928302E86C715736C6FE 0xDE MLOAD 0xEC SWAP2 DUP10 0xD0 PUSH2 0x584 0xAF 0x4A DUP4 TIMESTAMP 0xE0 0xC7 PUSH5 0x736F6C6343 STOP MOD 0xC STOP CALLER ",
+                "sourceMap": "643:552:7:-:0;;;;;"
+            }
+        }
+    },
+    "sourceTreeHashHex": "0x87a287630fdbf1f79527d9f0d34e049e1e6d3d66a8bb9cee2ea816a5b4b5a819",
+    "sources": {
+        "./DeploymentConstants.sol": {
+            "id": 7,
+            "content": "// SPDX-License-Identifier: Apache-2.0\n/*\n\n  Copyright 2020 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.6;\n\n\ncontract DeploymentConstants {\n\n    // solhint-disable separate-by-one-line-in-contract\n\n    // Mainnet addresses ///////////////////////////////////////////////////////\n    /// @dev Mainnet address of the WETH contract.\n    address constant private WETH_ADDRESS = 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2;\n\n    /// @dev Overridable way to get the WETH address.\n    /// @return wethAddress The WETH address.\n    function _getWethAddress()\n        internal\n        view\n        returns (address wethAddress)\n    {\n        return WETH_ADDRESS;\n    }\n\n}\n"
+        }
+    },
+    "sourceCodes": {
+        "./DeploymentConstants.sol": "// SPDX-License-Identifier: Apache-2.0\n/*\n\n  Copyright 2020 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.6;\n\n\ncontract DeploymentConstants {\n\n    // solhint-disable separate-by-one-line-in-contract\n\n    // Mainnet addresses ///////////////////////////////////////////////////////\n    /// @dev Mainnet address of the WETH contract.\n    address constant private WETH_ADDRESS = 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2;\n\n    /// @dev Overridable way to get the WETH address.\n    /// @return wethAddress The WETH address.\n    function _getWethAddress()\n        internal\n        view\n        returns (address wethAddress)\n    {\n        return WETH_ADDRESS;\n    }\n\n}\n"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.6.12+commit.27d51765",
+        "settings": {
+            "remappings": [
+                "@0x/contracts-utils=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-utils",
+                "@0x/contracts-erc20=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-erc20",
+                "@0x/contracts-zero-ex=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-zero-ex"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 62500,
+                "details": {
+                    "yul": true,
+                    "deduplicate": true,
+                    "cse": true,
+                    "constantOptimizer": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}
