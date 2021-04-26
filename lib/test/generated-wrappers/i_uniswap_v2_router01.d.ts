@@ -1,0 +1,45 @@
+import { EncoderOverrides, ContractTxFunctionObj, BaseContract } from '@0x/base-contract';
+import { ContractAbi, ContractArtifact, TxData, SupportedProvider } from 'ethereum-types';
+import { AbiEncoder, BigNumber } from '@0x/utils';
+import { SimpleContractArtifact } from '@0x/types';
+import { Web3Wrapper } from '@0x/web3-wrapper';
+export declare class IUniswapV2Router01Contract extends BaseContract {
+    /**
+     * @ignore
+     */
+    static deployedBytecode: string | undefined;
+    static contractName: string;
+    private readonly _methodABIIndex;
+    static deployFrom0xArtifactAsync(artifact: ContractArtifact | SimpleContractArtifact, supportedProvider: SupportedProvider, txDefaults: Partial<TxData>, logDecodeDependencies: {
+        [contractName: string]: (ContractArtifact | SimpleContractArtifact);
+    }): Promise<IUniswapV2Router01Contract>;
+    static deployWithLibrariesFrom0xArtifactAsync(artifact: ContractArtifact, libraryArtifacts: {
+        [libraryName: string]: ContractArtifact;
+    }, supportedProvider: SupportedProvider, txDefaults: Partial<TxData>, logDecodeDependencies: {
+        [contractName: string]: (ContractArtifact | SimpleContractArtifact);
+    }): Promise<IUniswapV2Router01Contract>;
+    static deployAsync(bytecode: string, abi: ContractAbi, supportedProvider: SupportedProvider, txDefaults: Partial<TxData>, logDecodeDependencies: {
+        [contractName: string]: ContractAbi;
+    }): Promise<IUniswapV2Router01Contract>;
+    /**
+     * @returns      The contract ABI
+     */
+    static ABI(): ContractAbi;
+    protected static _deployLibrariesAsync(artifact: ContractArtifact, libraryArtifacts: {
+        [libraryName: string]: ContractArtifact;
+    }, web3Wrapper: Web3Wrapper, txDefaults: Partial<TxData>, libraryAddresses?: {
+        [libraryName: string]: string;
+    }): Promise<{
+        [libraryName: string]: string;
+    }>;
+    getFunctionSignature(methodName: string): string;
+    getABIDecodedTransactionData<T>(methodName: string, callData: string): T;
+    getABIDecodedReturnData<T>(methodName: string, callData: string): T;
+    getSelector(methodName: string): string;
+    getAmountsIn(amountOut: BigNumber, path: string[]): ContractTxFunctionObj<BigNumber[]>;
+    getAmountsOut(amountIn: BigNumber, path: string[]): ContractTxFunctionObj<BigNumber[]>;
+    constructor(address: string, supportedProvider: SupportedProvider, txDefaults?: Partial<TxData>, logDecodeDependencies?: {
+        [contractName: string]: ContractAbi;
+    }, deployedBytecode?: string | undefined, encodingOpts?: AbiEncoder.EncodingRules | Partial<EncoderOverrides>);
+}
+//# sourceMappingURL=i_uniswap_v2_router01.d.ts.map
