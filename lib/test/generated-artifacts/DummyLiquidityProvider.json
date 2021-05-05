@@ -1,0 +1,147 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "DummyLiquidityProvider",
+    "compilerOutput": {
+        "abi": [
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "buyAmount",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "getBuyQuote",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "takerTokenAmount",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "sellAmount",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "getSellQuote",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "makerTokenAmount",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            }
+        ],
+        "devdoc": {
+            "kind": "dev",
+            "methods": {
+                "getBuyQuote(address,address,uint256)": {
+                    "details": "Quotes the amount of `takerToken` that would need to be sold in      order to obtain `buyAmount` of `makerToken`.",
+                    "params": {
+                        "buyAmount": "Amount of `makerToken` to buy."
+                    },
+                    "returns": {
+                        "takerTokenAmount": "Amount of `takerToken` that would need to be sold."
+                    }
+                },
+                "getSellQuote(address,address,uint256)": {
+                    "details": "Quotes the amount of `makerToken` that would be obtained by      selling `sellAmount` of `takerToken`.",
+                    "params": {
+                        "sellAmount": "Amount of `takerToken` to sell."
+                    },
+                    "returns": {
+                        "makerTokenAmount": "Amount of `makerToken` that would be obtained."
+                    }
+                }
+            },
+            "version": 1
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x608060405234801561001057600080fd5b5061015a806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c8063343fbcdd1461003b57806345060eb01461006b575b600080fd5b610055600480360381019061005091906100b9565b61009b565b60405161006291906100fc565b60405180910390f35b610085600480360381019061008091906100b9565b6100aa565b60405161009291906100fc565b60405180910390f35b60006001820390509392505050565b60006001820190509392505050565b6000806000606084860312156100cd578283fd5b83356100d88161010d565b8093505060208401356100ea8161010d565b80925050604084013590509250925092565b600060208201905082825292915050565b60018060a01b038116811461012157600080fd5b5056fea2646970667358221220d8e1618a6e769fe92e30b14b1c890082838a5fcf666338cc66d4c3a97a48393564736f6c634300060c0033",
+                "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH2 0x10 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH2 0x15A DUP1 PUSH2 0x20 PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH2 0x10 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH2 0x36 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x343FBCDD EQ PUSH2 0x3B JUMPI DUP1 PUSH4 0x45060EB0 EQ PUSH2 0x6B JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH2 0x55 PUSH1 0x4 DUP1 CALLDATASIZE SUB DUP2 ADD SWAP1 PUSH2 0x50 SWAP2 SWAP1 PUSH2 0xB9 JUMP JUMPDEST PUSH2 0x9B JUMP JUMPDEST PUSH1 0x40 MLOAD PUSH2 0x62 SWAP2 SWAP1 PUSH2 0xFC JUMP JUMPDEST PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 RETURN JUMPDEST PUSH2 0x85 PUSH1 0x4 DUP1 CALLDATASIZE SUB DUP2 ADD SWAP1 PUSH2 0x80 SWAP2 SWAP1 PUSH2 0xB9 JUMP JUMPDEST PUSH2 0xAA JUMP JUMPDEST PUSH1 0x40 MLOAD PUSH2 0x92 SWAP2 SWAP1 PUSH2 0xFC JUMP JUMPDEST PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 RETURN JUMPDEST PUSH1 0x0 PUSH1 0x1 DUP3 SUB SWAP1 POP SWAP4 SWAP3 POP POP POP JUMP JUMPDEST PUSH1 0x0 PUSH1 0x1 DUP3 ADD SWAP1 POP SWAP4 SWAP3 POP POP POP JUMP JUMPDEST PUSH1 0x0 DUP1 PUSH1 0x0 PUSH1 0x60 DUP5 DUP7 SUB SLT ISZERO PUSH2 0xCD JUMPI DUP3 DUP4 REVERT JUMPDEST DUP4 CALLDATALOAD PUSH2 0xD8 DUP2 PUSH2 0x10D JUMP JUMPDEST DUP1 SWAP4 POP POP PUSH1 0x20 DUP5 ADD CALLDATALOAD PUSH2 0xEA DUP2 PUSH2 0x10D JUMP JUMPDEST DUP1 SWAP3 POP POP PUSH1 0x40 DUP5 ADD CALLDATALOAD SWAP1 POP SWAP3 POP SWAP3 POP SWAP3 JUMP JUMPDEST PUSH1 0x0 PUSH1 0x20 DUP3 ADD SWAP1 POP DUP3 DUP3 MSTORE SWAP3 SWAP2 POP POP JUMP JUMPDEST PUSH1 0x1 DUP1 PUSH1 0xA0 SHL SUB DUP2 AND DUP2 EQ PUSH2 0x121 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xD8 0xE1 PUSH2 0x8A6E PUSH23 0x9FE92E30B14B1C890082838A5FCF666338CC66D4C3A97A 0x48 CODECOPY CALLDATALOAD PUSH5 0x736F6C6343 STOP MOD 0xC STOP CALLER ",
+                "sourceMap": "97:1082:38:-:0;;;;;;;;;;;;;;;;;;;"
+            },
+            "deployedBytecode": {
+                "immutableReferences": {},
+                "linkReferences": {},
+                "object": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c8063343fbcdd1461003b57806345060eb01461006b575b600080fd5b610055600480360381019061005091906100b9565b61009b565b60405161006291906100fc565b60405180910390f35b610085600480360381019061008091906100b9565b6100aa565b60405161009291906100fc565b60405180910390f35b60006001820390509392505050565b60006001820190509392505050565b6000806000606084860312156100cd578283fd5b83356100d88161010d565b8093505060208401356100ea8161010d565b80925050604084013590509250925092565b600060208201905082825292915050565b60018060a01b038116811461012157600080fd5b5056fea2646970667358221220d8e1618a6e769fe92e30b14b1c890082838a5fcf666338cc66d4c3a97a48393564736f6c634300060c0033",
+                "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH2 0x10 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH2 0x36 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x343FBCDD EQ PUSH2 0x3B JUMPI DUP1 PUSH4 0x45060EB0 EQ PUSH2 0x6B JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH2 0x55 PUSH1 0x4 DUP1 CALLDATASIZE SUB DUP2 ADD SWAP1 PUSH2 0x50 SWAP2 SWAP1 PUSH2 0xB9 JUMP JUMPDEST PUSH2 0x9B JUMP JUMPDEST PUSH1 0x40 MLOAD PUSH2 0x62 SWAP2 SWAP1 PUSH2 0xFC JUMP JUMPDEST PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 RETURN JUMPDEST PUSH2 0x85 PUSH1 0x4 DUP1 CALLDATASIZE SUB DUP2 ADD SWAP1 PUSH2 0x80 SWAP2 SWAP1 PUSH2 0xB9 JUMP JUMPDEST PUSH2 0xAA JUMP JUMPDEST PUSH1 0x40 MLOAD PUSH2 0x92 SWAP2 SWAP1 PUSH2 0xFC JUMP JUMPDEST PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 RETURN JUMPDEST PUSH1 0x0 PUSH1 0x1 DUP3 SUB SWAP1 POP SWAP4 SWAP3 POP POP POP JUMP JUMPDEST PUSH1 0x0 PUSH1 0x1 DUP3 ADD SWAP1 POP SWAP4 SWAP3 POP POP POP JUMP JUMPDEST PUSH1 0x0 DUP1 PUSH1 0x0 PUSH1 0x60 DUP5 DUP7 SUB SLT ISZERO PUSH2 0xCD JUMPI DUP3 DUP4 REVERT JUMPDEST DUP4 CALLDATALOAD PUSH2 0xD8 DUP2 PUSH2 0x10D JUMP JUMPDEST DUP1 SWAP4 POP POP PUSH1 0x20 DUP5 ADD CALLDATALOAD PUSH2 0xEA DUP2 PUSH2 0x10D JUMP JUMPDEST DUP1 SWAP3 POP POP PUSH1 0x40 DUP5 ADD CALLDATALOAD SWAP1 POP SWAP3 POP SWAP3 POP SWAP3 JUMP JUMPDEST PUSH1 0x0 PUSH1 0x20 DUP3 ADD SWAP1 POP DUP3 DUP3 MSTORE SWAP3 SWAP2 POP POP JUMP JUMPDEST PUSH1 0x1 DUP1 PUSH1 0xA0 SHL SUB DUP2 AND DUP2 EQ PUSH2 0x121 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xD8 0xE1 PUSH2 0x8A6E PUSH23 0x9FE92E30B14B1C890082838A5FCF666338CC66D4C3A97A 0x48 CODECOPY CALLDATALOAD PUSH5 0x736F6C6343 STOP MOD 0xC STOP CALLER ",
+                "sourceMap": "97:1082:38:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;397:251;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;929:248;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;397:251;568:24;640:1;627:10;:14;608:33;;397:251;;;;;:::o;929:248::-;1098:24;1169:1;1157:9;:13;1138:32;;929:248;;;;;:::o;279:491:-1:-;;;;417:2;405:9;396:7;392:23;388:32;385:2;;;-1:-1;;423:12;385:2;85:6;72:20;97:33;124:5;97:33;:::i;:::-;475:63;;;;575:2;618:9;614:22;72:20;97:33;124:5;97:33;:::i;:::-;583:63;;;;683:2;726:9;722:22;209:20;691:63;;379:391;;;;;:::o;897:222::-;;1024:2;1013:9;1009:18;1001:26;;878:5;855:3;848:37;995:124;;;;:::o;1431:117::-;1297:42;;;;;1518:5;1286:54;1493:5;1490:35;1480:2;;1539:1;;1529:12;1480:2;1474:74;:::o"
+            }
+        }
+    },
+    "sourceTreeHashHex": "0x562a415d0ed31ba1d6a0ac5ebc19e840bbce2134bac2678d4423fbae5d3842c6",
+    "sources": {
+        "./DummyLiquidityProvider.sol": {
+            "id": 38,
+            "content": "// SPDX-License-Identifier: Apache-2.0\npragma solidity ^0.6;\npragma experimental ABIEncoderV2;\n\n\ncontract DummyLiquidityProvider\n{\n    /// @dev Quotes the amount of `makerToken` that would be obtained by\n    ///      selling `sellAmount` of `takerToken`.\n    /// @param sellAmount Amount of `takerToken` to sell.\n    /// @return makerTokenAmount Amount of `makerToken` that would be obtained.\n    function getSellQuote(\n        address, /* takerToken */\n        address, /* makerToken */\n        uint256 sellAmount\n    )\n        external\n        view\n        returns (uint256 makerTokenAmount)\n    {\n        makerTokenAmount = sellAmount - 1;\n    }\n\n    /// @dev Quotes the amount of `takerToken` that would need to be sold in\n    ///      order to obtain `buyAmount` of `makerToken`.\n    /// @param buyAmount Amount of `makerToken` to buy.\n    /// @return takerTokenAmount Amount of `takerToken` that would need to be sold.\n    function getBuyQuote(\n        address, /* takerToken */\n        address, /* makerToken */\n        uint256 buyAmount\n    )\n        external\n        view\n        returns (uint256 takerTokenAmount)\n    {\n        takerTokenAmount = buyAmount + 1;\n    }\n}\n"
+        }
+    },
+    "sourceCodes": {
+        "./DummyLiquidityProvider.sol": "// SPDX-License-Identifier: Apache-2.0\npragma solidity ^0.6;\npragma experimental ABIEncoderV2;\n\n\ncontract DummyLiquidityProvider\n{\n    /// @dev Quotes the amount of `makerToken` that would be obtained by\n    ///      selling `sellAmount` of `takerToken`.\n    /// @param sellAmount Amount of `takerToken` to sell.\n    /// @return makerTokenAmount Amount of `makerToken` that would be obtained.\n    function getSellQuote(\n        address, /* takerToken */\n        address, /* makerToken */\n        uint256 sellAmount\n    )\n        external\n        view\n        returns (uint256 makerTokenAmount)\n    {\n        makerTokenAmount = sellAmount - 1;\n    }\n\n    /// @dev Quotes the amount of `takerToken` that would need to be sold in\n    ///      order to obtain `buyAmount` of `makerToken`.\n    /// @param buyAmount Amount of `makerToken` to buy.\n    /// @return takerTokenAmount Amount of `takerToken` that would need to be sold.\n    function getBuyQuote(\n        address, /* takerToken */\n        address, /* makerToken */\n        uint256 buyAmount\n    )\n        external\n        view\n        returns (uint256 takerTokenAmount)\n    {\n        takerTokenAmount = buyAmount + 1;\n    }\n}\n"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.6.12+commit.27d51765",
+        "settings": {
+            "remappings": [
+                "@0x/contracts-utils=/Users/kim/Development/protocol/packages/asset-swapper/node_modules/@0x/contracts-utils",
+                "@0x/contracts-erc20=/Users/kim/Development/protocol/packages/asset-swapper/node_modules/@0x/contracts-erc20",
+                "@0x/contracts-zero-ex=/Users/kim/Development/protocol/packages/asset-swapper/node_modules/@0x/contracts-zero-ex"
+            ],
+            "optimizer": {
+                "enabled": false,
+                "runs": 200,
+                "details": {
+                    "yul": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}
