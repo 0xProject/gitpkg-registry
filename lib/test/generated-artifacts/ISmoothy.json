@@ -1,0 +1,143 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "ISmoothy",
+    "compilerOutput": {
+        "abi": [
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "tid",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "_yBalances",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "balance",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "tid",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "getBalance",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "balance",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "tid",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "getTokenStats",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "softWeight",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "hardWeight",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "balance",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "decimals",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            }
+        ],
+        "devdoc": {
+            "kind": "dev",
+            "methods": {},
+            "version": 1
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            },
+            "deployedBytecode": {
+                "immutableReferences": {},
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            }
+        }
+    },
+    "sourceTreeHashHex": "0x9d43817a11eecf65a33332ab2b83dc0b3c087662055be6e47d6184ee898018c9",
+    "sources": {
+        "./ISmoothy.sol": {
+            "id": 35,
+            "content": "// SPDX-License-Identifier: Apache-2.0\n/*\n\n  Copyright 2021 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.6;\n\n\ninterface ISmoothy {\n\n    function getBalance (\n        uint256 tid\n    )\n        external\n        view\n        returns (uint256 balance);\n\n    function _yBalances (\n        uint256 tid\n    )\n        external\n        view\n        returns (uint256 balance);\n\n    function getTokenStats (\n        uint256 tid\n    )\n        external\n        view\n        returns (uint256 softWeight, uint256 hardWeight, uint256 balance, uint256 decimals);\n}\n"
+        }
+    },
+    "sourceCodes": {
+        "./ISmoothy.sol": "// SPDX-License-Identifier: Apache-2.0\n/*\n\n  Copyright 2021 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.6;\n\n\ninterface ISmoothy {\n\n    function getBalance (\n        uint256 tid\n    )\n        external\n        view\n        returns (uint256 balance);\n\n    function _yBalances (\n        uint256 tid\n    )\n        external\n        view\n        returns (uint256 balance);\n\n    function getTokenStats (\n        uint256 tid\n    )\n        external\n        view\n        returns (uint256 softWeight, uint256 hardWeight, uint256 balance, uint256 decimals);\n}\n"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.6.12+commit.27d51765",
+        "settings": {
+            "remappings": [
+                "@0x/contracts-utils=/Users/danielpyrathon/Desktop/Projects/protocol/packages/asset-swapper/node_modules/@0x/contracts-utils",
+                "@0x/contracts-erc20=/Users/danielpyrathon/Desktop/Projects/protocol/packages/asset-swapper/node_modules/@0x/contracts-erc20",
+                "@0x/contracts-zero-ex=/Users/danielpyrathon/Desktop/Projects/protocol/packages/asset-swapper/node_modules/@0x/contracts-zero-ex"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 200,
+                "details": {
+                    "yul": true,
+                    "deduplicate": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}
