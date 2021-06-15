@@ -1,0 +1,70 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "SamplerUtils",
+    "compilerOutput": {
+        "abi": [],
+        "devdoc": {
+            "kind": "dev",
+            "methods": {},
+            "version": 1
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220251b9a41bea2160f294c1282203f84321300b5856220d3aaa29532a09d092a3164736f6c634300060c0033",
+                "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x3F DUP1 PUSH1 0x1D PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0x25 SHL SWAP11 COINBASE 0xBE LOG2 AND 0xF 0x29 0x4C SLT DUP3 KECCAK256 EXTCODEHASH DUP5 ORIGIN SGT STOP 0xB5 DUP6 PUSH3 0x20D3AA LOG2 SWAP6 ORIGIN LOG0 SWAP14 MULMOD 0x2A BALANCE PUSH5 0x736F6C6343 STOP MOD 0xC STOP CALLER ",
+                "sourceMap": "677:571:17:-:0;;;;;;;;;;;;;;;;;;;"
+            },
+            "deployedBytecode": {
+                "immutableReferences": {},
+                "linkReferences": {},
+                "object": "0x6080604052600080fdfea2646970667358221220251b9a41bea2160f294c1282203f84321300b5856220d3aaa29532a09d092a3164736f6c634300060c0033",
+                "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0x25 SHL SWAP11 COINBASE 0xBE LOG2 AND 0xF 0x29 0x4C SLT DUP3 KECCAK256 EXTCODEHASH DUP5 ORIGIN SGT STOP 0xB5 DUP6 PUSH3 0x20D3AA LOG2 SWAP6 ORIGIN LOG0 SWAP14 MULMOD 0x2A BALANCE PUSH5 0x736F6C6343 STOP MOD 0xC STOP CALLER ",
+                "sourceMap": "677:571:17:-:0;;;;;"
+            }
+        }
+    },
+    "sourceTreeHashHex": "0x9ecf52fca2446b968c4680f23374316512548639b99503d2b5ddb77c46fcb1f1",
+    "sources": {
+        "./SamplerUtils.sol": {
+            "id": 17,
+            "content": "// SPDX-License-Identifier: Apache-2.0\n/*\n\n  Copyright 2020 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.6;\npragma experimental ABIEncoderV2;\n\n\ncontract SamplerUtils {\n\n    function _toSingleValueArray(uint256 v)\n        internal\n        pure\n        returns (uint256[] memory arr)\n    {\n        arr = new uint256[](1);\n        arr[0] = v;\n    }\n\n    /// @dev Assert that the tokens in a trade pair are valid.\n    /// @param makerToken Address of the maker token.\n    /// @param takerToken Address of the taker token.\n    function _assertValidPair(address makerToken, address takerToken)\n        internal\n        pure\n    {\n        require(makerToken != takerToken, \"ERC20BridgeSampler/INVALID_TOKEN_PAIR\");\n    }\n}\n"
+        }
+    },
+    "sourceCodes": {
+        "./SamplerUtils.sol": "// SPDX-License-Identifier: Apache-2.0\n/*\n\n  Copyright 2020 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.6;\npragma experimental ABIEncoderV2;\n\n\ncontract SamplerUtils {\n\n    function _toSingleValueArray(uint256 v)\n        internal\n        pure\n        returns (uint256[] memory arr)\n    {\n        arr = new uint256[](1);\n        arr[0] = v;\n    }\n\n    /// @dev Assert that the tokens in a trade pair are valid.\n    /// @param makerToken Address of the maker token.\n    /// @param takerToken Address of the taker token.\n    function _assertValidPair(address makerToken, address takerToken)\n        internal\n        pure\n    {\n        require(makerToken != takerToken, \"ERC20BridgeSampler/INVALID_TOKEN_PAIR\");\n    }\n}\n"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.6.12+commit.27d51765",
+        "settings": {
+            "remappings": [
+                "@0x/contracts-zero-ex=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-zero-ex",
+                "@0x/contracts-erc20=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-erc20",
+                "@0x/contracts-utils=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-utils"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 200,
+                "details": {
+                    "yul": true,
+                    "deduplicate": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}
