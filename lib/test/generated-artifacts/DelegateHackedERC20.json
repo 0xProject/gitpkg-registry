@@ -1,0 +1,92 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "DelegateHackedERC20",
+    "compilerOutput": {
+        "abi": [
+            {
+                "stateMutability": "payable",
+                "type": "fallback"
+            },
+            {
+                "inputs": [],
+                "name": "_garbage",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            }
+        ],
+        "devdoc": {
+            "kind": "dev",
+            "methods": {
+                "_garbage()": {
+                    "details": "Hack to get around schema validation"
+                }
+            },
+            "version": 1
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x608060405234801561001057600080fd5b50610114806100206000396000f3fe608060405260043610601f5760003560e01c8063cbbcb8811460b5576025565b36602557005b6000606073def1000000000000000000000000000000de7d376001600160a01b03166000366040518083838082843760405192019450600093509091505080830381855af49150503d80600081146097576040519150601f19603f3d011682016040523d82523d6000602084013e609c565b606091505b50915091508160ad57805160208201fd5b805160208201f35b34801560c057600080fd5b5060c760d9565b60408051918252519081900360200190f35b60009056fea2646970667358221220b2248a4e6f29cf7905e18f6bd8721449be3102a32022c333becde93e0c7823b364736f6c634300060c0033",
+                "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH2 0x10 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH2 0x114 DUP1 PUSH2 0x20 PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x4 CALLDATASIZE LT PUSH1 0x1F JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0xCBBCB881 EQ PUSH1 0xB5 JUMPI PUSH1 0x25 JUMP JUMPDEST CALLDATASIZE PUSH1 0x25 JUMPI STOP JUMPDEST PUSH1 0x0 PUSH1 0x60 PUSH20 0xDEF1000000000000000000000000000000DE7D37 PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND PUSH1 0x0 CALLDATASIZE PUSH1 0x40 MLOAD DUP1 DUP4 DUP4 DUP1 DUP3 DUP5 CALLDATACOPY PUSH1 0x40 MLOAD SWAP3 ADD SWAP5 POP PUSH1 0x0 SWAP4 POP SWAP1 SWAP2 POP POP DUP1 DUP4 SUB DUP2 DUP6 GAS DELEGATECALL SWAP2 POP POP RETURNDATASIZE DUP1 PUSH1 0x0 DUP2 EQ PUSH1 0x97 JUMPI PUSH1 0x40 MLOAD SWAP2 POP PUSH1 0x1F NOT PUSH1 0x3F RETURNDATASIZE ADD AND DUP3 ADD PUSH1 0x40 MSTORE RETURNDATASIZE DUP3 MSTORE RETURNDATASIZE PUSH1 0x0 PUSH1 0x20 DUP5 ADD RETURNDATACOPY PUSH1 0x9C JUMP JUMPDEST PUSH1 0x60 SWAP2 POP JUMPDEST POP SWAP2 POP SWAP2 POP DUP2 PUSH1 0xAD JUMPI DUP1 MLOAD PUSH1 0x20 DUP3 ADD REVERT JUMPDEST DUP1 MLOAD PUSH1 0x20 DUP3 ADD RETURN JUMPDEST CALLVALUE DUP1 ISZERO PUSH1 0xC0 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0xC7 PUSH1 0xD9 JUMP JUMPDEST PUSH1 0x40 DUP1 MLOAD SWAP2 DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1 RETURN JUMPDEST PUSH1 0x0 SWAP1 JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xB2 0x24 DUP11 0x4E PUSH16 0x29CF7905E18F6BD8721449BE3102A320 0x22 0xC3 CALLER 0xBE 0xCD 0xE9 RETURNDATACOPY 0xC PUSH25 0x23B364736F6C634300060C0033000000000000000000000000 ",
+                "sourceMap": "62:601:7:-:0;;;;;;;;;;;;;;;;;;;"
+            },
+            "deployedBytecode": {
+                "immutableReferences": {},
+                "linkReferences": {},
+                "object": "0x608060405260043610601f5760003560e01c8063cbbcb8811460b5576025565b36602557005b6000606073def1000000000000000000000000000000de7d376001600160a01b03166000366040518083838082843760405192019450600093509091505080830381855af49150503d80600081146097576040519150601f19603f3d011682016040523d82523d6000602084013e609c565b606091505b50915091508160ad57805160208201fd5b805160208201f35b34801560c057600080fd5b5060c760d9565b60408051918252519081900360200190f35b60009056fea2646970667358221220b2248a4e6f29cf7905e18f6bd8721449be3102a32022c333becde93e0c7823b364736f6c634300060c0033",
+                "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x4 CALLDATASIZE LT PUSH1 0x1F JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0xCBBCB881 EQ PUSH1 0xB5 JUMPI PUSH1 0x25 JUMP JUMPDEST CALLDATASIZE PUSH1 0x25 JUMPI STOP JUMPDEST PUSH1 0x0 PUSH1 0x60 PUSH20 0xDEF1000000000000000000000000000000DE7D37 PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND PUSH1 0x0 CALLDATASIZE PUSH1 0x40 MLOAD DUP1 DUP4 DUP4 DUP1 DUP3 DUP5 CALLDATACOPY PUSH1 0x40 MLOAD SWAP3 ADD SWAP5 POP PUSH1 0x0 SWAP4 POP SWAP1 SWAP2 POP POP DUP1 DUP4 SUB DUP2 DUP6 GAS DELEGATECALL SWAP2 POP POP RETURNDATASIZE DUP1 PUSH1 0x0 DUP2 EQ PUSH1 0x97 JUMPI PUSH1 0x40 MLOAD SWAP2 POP PUSH1 0x1F NOT PUSH1 0x3F RETURNDATASIZE ADD AND DUP3 ADD PUSH1 0x40 MSTORE RETURNDATASIZE DUP3 MSTORE RETURNDATASIZE PUSH1 0x0 PUSH1 0x20 DUP5 ADD RETURNDATACOPY PUSH1 0x9C JUMP JUMPDEST PUSH1 0x60 SWAP2 POP JUMPDEST POP SWAP2 POP SWAP2 POP DUP2 PUSH1 0xAD JUMPI DUP1 MLOAD PUSH1 0x20 DUP3 ADD REVERT JUMPDEST DUP1 MLOAD PUSH1 0x20 DUP3 ADD RETURN JUMPDEST CALLVALUE DUP1 ISZERO PUSH1 0xC0 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0xC7 PUSH1 0xD9 JUMP JUMPDEST PUSH1 0x40 DUP1 MLOAD SWAP2 DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1 RETURN JUMPDEST PUSH1 0x0 SWAP1 JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xB2 0x24 DUP11 0x4E PUSH16 0x29CF7905E18F6BD8721449BE3102A320 0x22 0xC3 CALLER 0xBE 0xCD 0xE9 RETURNDATACOPY 0xC PUSH25 0x23B364736F6C634300060C0033000000000000000000000000 ",
+                "sourceMap": "62:601:7:-:0;;;;;;;;;;;;;;;;;;;;;;;;;255:12;269:23;132:42;-1:-1:-1;;;;;308:19:7;328:8;;308:29;;;;;;;;;;;;;;-1:-1:-1;308:29:7;;-1:-1:-1;308:29:7;;-1:-1:-1;;308:29:7;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;254:83;;;;352:7;347:97;;420:10;414:17;409:2;397:10;393:19;386:46;384:50;498:10;492:17;487:2;475:10;471:19;464:46;574:87;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;641:7;574:87;:::o"
+            }
+        }
+    },
+    "sourceTreeHashHex": "0x3551ec10548a7e1679d0e5a2bdb7bd1af2943c51b86c3a79fa913d075ead2854",
+    "sources": {
+        "./DelegateHackedERC20.sol": {
+            "id": 7,
+            "content": "// SPDX-License-Identifier: Apache-2.0\npragma solidity ^0.6;\n\ncontract DelegateHackedERC20 {\n\n    address private constant HACKED = 0xDEf1000000000000000000000000000000DE7d37;\n\n    receive() external payable {}\n\n    fallback() payable external {\n        (bool success, bytes memory resultData) =\n            HACKED.delegatecall(msg.data);\n        if (!success) {\n            assembly { revert(add(resultData, 32), mload(resultData)) }\n        }\n        assembly { return(add(resultData, 32), mload(resultData)) }\n    }\n\n    /// @dev Hack to get around schema validation\n    function _garbage()\n        external\n        view\n        returns (uint256)\n    {\n    }\n}\n"
+        }
+    },
+    "sourceCodes": {
+        "./DelegateHackedERC20.sol": "// SPDX-License-Identifier: Apache-2.0\npragma solidity ^0.6;\n\ncontract DelegateHackedERC20 {\n\n    address private constant HACKED = 0xDEf1000000000000000000000000000000DE7d37;\n\n    receive() external payable {}\n\n    fallback() payable external {\n        (bool success, bytes memory resultData) =\n            HACKED.delegatecall(msg.data);\n        if (!success) {\n            assembly { revert(add(resultData, 32), mload(resultData)) }\n        }\n        assembly { return(add(resultData, 32), mload(resultData)) }\n    }\n\n    /// @dev Hack to get around schema validation\n    function _garbage()\n        external\n        view\n        returns (uint256)\n    {\n    }\n}\n"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.6.12+commit.27d51765",
+        "settings": {
+            "remappings": [
+                "@0x/contracts-zero-ex=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-zero-ex",
+                "@0x/contracts-erc20=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-erc20",
+                "@0x/contracts-utils=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-utils"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 200,
+                "details": {
+                    "yul": true,
+                    "deduplicate": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}

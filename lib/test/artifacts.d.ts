@@ -1,0 +1,38 @@
+import { ContractArtifact } from 'ethereum-types';
+export declare const artifacts: {
+    BalanceChecker: ContractArtifact;
+    BalancerSampler: ContractArtifact;
+    BalancerV2Sampler: ContractArtifact;
+    BancorSampler: ContractArtifact;
+    CurveSampler: ContractArtifact;
+    DODOSampler: ContractArtifact;
+    DODOV2Sampler: ContractArtifact;
+    DelegateHackedERC20: ContractArtifact;
+    ERC20BridgeSampler: ContractArtifact;
+    Eth2DaiSampler: ContractArtifact;
+    FakeTaker: ContractArtifact;
+    GasOverhead: ContractArtifact;
+    HackedERC20: ContractArtifact;
+    KyberDmmSampler: ContractArtifact;
+    KyberSampler: ContractArtifact;
+    LiquidityProviderSampler: ContractArtifact;
+    MStableSampler: ContractArtifact;
+    MakerPSMSampler: ContractArtifact;
+    MooniswapSampler: ContractArtifact;
+    NativeOrderSampler: ContractArtifact;
+    ShellSampler: ContractArtifact;
+    SwapRevertSampler: ContractArtifact;
+    TwoHopSampler: ContractArtifact;
+    UniswapSampler: ContractArtifact;
+    UniswapV2Sampler: ContractArtifact;
+    UniswapV3Sampler: ContractArtifact;
+    UtilitySampler: ContractArtifact;
+    IEth2Dai: ContractArtifact;
+    IKyberNetwork: ContractArtifact;
+    IUniswapExchangeQuotes: ContractArtifact;
+    IUniswapV2Router01: ContractArtifact;
+    DummyLiquidityProvider: ContractArtifact;
+    TestERC20BridgeSampler: ContractArtifact;
+    TestNativeOrderSampler: ContractArtifact;
+};
+//# sourceMappingURL=artifacts.d.ts.map
