@@ -1,0 +1,109 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "GasOverhead",
+    "compilerOutput": {
+        "abi": [
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "gas",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "gasBefore",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "addOverhead",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "clearOverhead",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "overhead",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            }
+        ],
+        "devdoc": {
+            "kind": "dev",
+            "methods": {},
+            "version": 1
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x6080604052600260005534801561001557600080fd5b5060e0806100246000396000f3fe6080604052348015600f57600080fd5b5060043610603c5760003560e01c806302a9192f1460415780630c18c162146063578063d0afdca914607b575b600080fd5b606160048036036040811015605557600080fd5b50803590602001356081565b005b6069609d565b60408051918252519081900360200190f35b606160a3565b60005a60008054919093039390930192909201614e2001905550565b60005490565b600260005556fea26469706673582212204a698265e35cb9165276f5c1131cf32ce02f05eee9d3231bc361922bf96db51064736f6c634300060c0033",
+                "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x2 PUSH1 0x0 SSTORE CALLVALUE DUP1 ISZERO PUSH2 0x15 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0xE0 DUP1 PUSH2 0x24 PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH1 0x3C JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x2A9192F EQ PUSH1 0x41 JUMPI DUP1 PUSH4 0xC18C162 EQ PUSH1 0x63 JUMPI DUP1 PUSH4 0xD0AFDCA9 EQ PUSH1 0x7B JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x61 PUSH1 0x4 DUP1 CALLDATASIZE SUB PUSH1 0x40 DUP2 LT ISZERO PUSH1 0x55 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP DUP1 CALLDATALOAD SWAP1 PUSH1 0x20 ADD CALLDATALOAD PUSH1 0x81 JUMP JUMPDEST STOP JUMPDEST PUSH1 0x69 PUSH1 0x9D JUMP JUMPDEST PUSH1 0x40 DUP1 MLOAD SWAP2 DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1 RETURN JUMPDEST PUSH1 0x61 PUSH1 0xA3 JUMP JUMPDEST PUSH1 0x0 GAS PUSH1 0x0 DUP1 SLOAD SWAP2 SWAP1 SWAP4 SUB SWAP4 SWAP1 SWAP4 ADD SWAP3 SWAP1 SWAP3 ADD PUSH2 0x4E20 ADD SWAP1 SSTORE POP JUMP JUMPDEST PUSH1 0x0 SLOAD SWAP1 JUMP JUMPDEST PUSH1 0x2 PUSH1 0x0 SSTORE JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0x4A PUSH10 0x8265E35CB9165276F5C1 SGT SHR RETURN 0x2C 0xE0 0x2F SDIV 0xEE 0xE9 0xD3 0x23 SHL 0xC3 PUSH2 0x922B 0xF9 PUSH14 0xB51064736F6C634300060C003300 ",
+                "sourceMap": "62:636:9:-:0;;;117:1;89:29;;62:636;;;;;;;;;;;;;;;;"
+            },
+            "deployedBytecode": {
+                "immutableReferences": {},
+                "linkReferences": {},
+                "object": "0x6080604052348015600f57600080fd5b5060043610603c5760003560e01c806302a9192f1460415780630c18c162146063578063d0afdca914607b575b600080fd5b606160048036036040811015605557600080fd5b50803590602001356081565b005b6069609d565b60408051918252519081900360200190f35b606160a3565b60005a60008054919093039390930192909201614e2001905550565b60005490565b600260005556fea26469706673582212204a698265e35cb9165276f5c1131cf32ce02f05eee9d3231bc361922bf96db51064736f6c634300060c0033",
+                "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH1 0x3C JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x2A9192F EQ PUSH1 0x41 JUMPI DUP1 PUSH4 0xC18C162 EQ PUSH1 0x63 JUMPI DUP1 PUSH4 0xD0AFDCA9 EQ PUSH1 0x7B JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x61 PUSH1 0x4 DUP1 CALLDATASIZE SUB PUSH1 0x40 DUP2 LT ISZERO PUSH1 0x55 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP DUP1 CALLDATALOAD SWAP1 PUSH1 0x20 ADD CALLDATALOAD PUSH1 0x81 JUMP JUMPDEST STOP JUMPDEST PUSH1 0x69 PUSH1 0x9D JUMP JUMPDEST PUSH1 0x40 DUP1 MLOAD SWAP2 DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1 RETURN JUMPDEST PUSH1 0x61 PUSH1 0xA3 JUMP JUMPDEST PUSH1 0x0 GAS PUSH1 0x0 DUP1 SLOAD SWAP2 SWAP1 SWAP4 SUB SWAP4 SWAP1 SWAP4 ADD SWAP3 SWAP1 SWAP3 ADD PUSH2 0x4E20 ADD SWAP1 SSTORE POP JUMP JUMPDEST PUSH1 0x0 SLOAD SWAP1 JUMP JUMPDEST PUSH1 0x2 PUSH1 0x0 SSTORE JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0x4A PUSH10 0x8265E35CB9165276F5C1 SGT SHR RETURN 0x2C 0xE0 0x2F SDIV 0xEE 0xE9 0xD3 0x23 SHL 0xC3 PUSH2 0x922B 0xF9 PUSH14 0xB51064736F6C634300060C003300 ",
+                "sourceMap": "62:636:9:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;236:259;;;;;;;;;;;;;;;;-1:-1:-1;236:259:9;;;;;;;:::i;:::-;;583:113;;;:::i;:::-;;;;;;;;;;;;;;;;501:76;;;:::i;236:259::-;320:20;355:9;439;:49;;343:21;;;;452:18;;;;439:49;;;;224:5;439:49;;;-1:-1:-1;236:259:9:o;583:113::-;650:7;680:9;583:113;:::o;501:76::-;569:1;557:9;:13;501:76::o"
+            }
+        }
+    },
+    "sourceTreeHashHex": "0x0463c26237be1b229cd0a051a0614f28c1f9baee2c12fe630b430c603cf09675",
+    "sources": {
+        "./GasOverhead.sol": {
+            "id": 9,
+            "content": "// SPDX-License-Identifier: Apache-2.0\npragma solidity ^0.6;\n\ncontract GasOverhead {\n    uint256 private _overhead = 2;\n    // Overhead incurred from updating the overhead storage slot\n    uint256 constant SSTORE_OVERHEAD = 20000;\n\n    function addOverhead(uint256 gas, uint256 gasBefore)\n        external\n    {\n        uint256 callOverhead = gasBefore - gasleft();\n        // Add additional est overhead of performing this update\n        _overhead += gas + callOverhead + SSTORE_OVERHEAD;\n    }\n\n    function clearOverhead()\n        external\n    {\n        _overhead = 2;\n    }\n\n    function overhead()\n        external\n        view\n        returns (uint256)\n    {\n        return _overhead;\n    }\n}\n"
+        }
+    },
+    "sourceCodes": {
+        "./GasOverhead.sol": "// SPDX-License-Identifier: Apache-2.0\npragma solidity ^0.6;\n\ncontract GasOverhead {\n    uint256 private _overhead = 2;\n    // Overhead incurred from updating the overhead storage slot\n    uint256 constant SSTORE_OVERHEAD = 20000;\n\n    function addOverhead(uint256 gas, uint256 gasBefore)\n        external\n    {\n        uint256 callOverhead = gasBefore - gasleft();\n        // Add additional est overhead of performing this update\n        _overhead += gas + callOverhead + SSTORE_OVERHEAD;\n    }\n\n    function clearOverhead()\n        external\n    {\n        _overhead = 2;\n    }\n\n    function overhead()\n        external\n        view\n        returns (uint256)\n    {\n        return _overhead;\n    }\n}\n"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.6.12+commit.27d51765",
+        "settings": {
+            "remappings": [
+                "@0x/contracts-zero-ex=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-zero-ex",
+                "@0x/contracts-erc20=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-erc20",
+                "@0x/contracts-utils=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/0x-monorepo/packages/asset-swapper/node_modules/@0x/contracts-utils"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 200,
+                "details": {
+                    "yul": true,
+                    "deduplicate": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}
