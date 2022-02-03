@@ -1,0 +1,66 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "LibSafeMath",
+    "compilerOutput": {
+        "abi": [],
+        "devdoc": {
+            "kind": "dev",
+            "methods": {},
+            "version": 1
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220ef99f59562b311e97c863864319fc3d58e468dd00b878be7fc1666a3ad862d3a64736f6c634300060c0033",
+                "opcodes": "PUSH1 0x56 PUSH1 0x23 PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH1 0x0 BYTE PUSH1 0x73 EQ PUSH1 0x16 JUMPI INVALID JUMPDEST ADDRESS PUSH1 0x0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xEF SWAP10 CREATE2 SWAP6 PUSH3 0xB311E9 PUSH29 0x863864319FC3D58E468DD00B878BE7FC1666A3AD862D3A64736F6C6343 STOP MOD 0xC STOP CALLER ",
+                "sourceMap": "642:3748:14:-:0;;;;;;;;;;;;;;;;;;;;;;;;;"
+            },
+            "deployedBytecode": {
+                "immutableReferences": {},
+                "linkReferences": {},
+                "object": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220ef99f59562b311e97c863864319fc3d58e468dd00b878be7fc1666a3ad862d3a64736f6c634300060c0033",
+                "opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xEF SWAP10 CREATE2 SWAP6 PUSH3 0xB311E9 PUSH29 0x863864319FC3D58E468DD00B878BE7FC1666A3AD862D3A64736F6C6343 STOP MOD 0xC STOP CALLER ",
+                "sourceMap": "642:3748:14:-:0;;;;;;;;"
+            }
+        }
+    },
+    "sourceTreeHashHex": "0x4638b273ce2ff11e3e08014a333e432ffd67cf74212726f770b8535adcf8d31c",
+    "sources": {
+        "./LibSafeMath.sol": {
+            "id": 14,
+            "content": "// SPDX-License-Identifier: Apache-2.0\n/*\n\n  Copyright 2022 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.6;\n\nlibrary LibSafeMath {\n    using LibSafeMath for uint256;\n\n    function safeMul(uint256 a, uint256 b)\n        internal\n        pure\n        returns (uint256)\n    {\n        if (a == 0) {\n            return 0;\n        }\n        uint256 c = a * b;\n        if (c / a != b) {\n            revert(\"SafeMath: multiplication overflow\");\n        }\n        return c;\n    }\n\n    function safeDiv(uint256 a, uint256 b)\n        internal\n        pure\n        returns (uint256)\n    {\n        if (b == 0) {\n            revert(\"SafeMath: division by 0\");\n        }\n        uint256 c = a / b;\n        return c;\n    }\n\n    function safeSub(uint256 a, uint256 b)\n        internal\n        pure\n        returns (uint256)\n    {\n        if (b > a) {\n            revert(\"SafeMath: subtraction underflow\");\n        }\n        return a - b;\n    }\n\n    function safeAdd(uint256 a, uint256 b)\n        internal\n        pure\n        returns (uint256)\n    {\n        uint256 c = a + b;\n        if (c < a) {\n            revert(\"SafeMath: addition overflow\");\n        }\n        return c;\n    }\n\n    function max256(uint256 a, uint256 b)\n        internal\n        pure\n        returns (uint256)\n    {\n        return a >= b ? a : b;\n    }\n\n    function min256(uint256 a, uint256 b)\n        internal\n        pure\n        returns (uint256)\n    {\n        return a < b ? a : b;\n    }\n\n    function safeMul128(uint128 a, uint128 b)\n        internal\n        pure\n        returns (uint128)\n    {\n        if (a == 0) {\n            return 0;\n        }\n        uint128 c = a * b;\n        if (c / a != b) {\n            revert(\"SafeMath: multiplication overflow\");\n        }\n        return c;\n    }\n\n    function safeDiv128(uint128 a, uint128 b)\n        internal\n        pure\n        returns (uint128)\n    {\n        if (b == 0) {\n            revert(\"SafeMath: division by 0\");\n        }\n        uint128 c = a / b;\n        return c;\n    }\n\n    function safeSub128(uint128 a, uint128 b)\n        internal\n        pure\n        returns (uint128)\n    {\n        if (b > a) {\n            revert(\"SafeMath: subtraction underflow\");\n        }\n        return a - b;\n    }\n\n    function safeAdd128(uint128 a, uint128 b)\n        internal\n        pure\n        returns (uint128)\n    {\n        uint128 c = a + b;\n        if (c < a) {\n            revert(\"SafeMath: addition overflow\");\n        }\n        return c;\n    }\n\n    function max128(uint128 a, uint128 b)\n        internal\n        pure\n        returns (uint128)\n    {\n        return a >= b ? a : b;\n    }\n\n    function min128(uint128 a, uint128 b)\n        internal\n        pure\n        returns (uint128)\n    {\n        return a < b ? a : b;\n    }\n\n    function safeDowncastToUint128(uint256 a)\n        internal\n        pure\n        returns (uint128)\n    {\n        if (a > type(uint128).max) {\n            revert(\"SafeMath: cannot downcast uint256 to uint128\");\n        }\n        return uint128(a);\n    }\n\n    function getPartialAmountCeil(\n        uint256 numerator,\n        uint256 denominator,\n        uint256 target\n    )\n        internal\n        pure\n        returns (uint256 partialAmount)\n    {\n        // safeDiv computes `floor(a / b)`. We use the identity (a, b integer):\n        //       ceil(a / b) = floor((a + b - 1) / b)\n        // To implement `ceil(a / b)` using safeDiv.\n        partialAmount = numerator.safeMul(target)\n            .safeAdd(denominator.safeSub(1))\n            .safeDiv(denominator);\n\n        return partialAmount;\n    }\n\n    function getPartialAmountFloor(\n        uint256 numerator,\n        uint256 denominator,\n        uint256 target\n    )\n        internal\n        pure\n        returns (uint256 partialAmount)\n    {\n        partialAmount = numerator.safeMul(target).safeDiv(denominator);\n        return partialAmount;\n    }\n}\n"
+        }
+    },
+    "sourceCodes": {
+        "./LibSafeMath.sol": "// SPDX-License-Identifier: Apache-2.0\n/*\n\n  Copyright 2022 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.6;\n\nlibrary LibSafeMath {\n    using LibSafeMath for uint256;\n\n    function safeMul(uint256 a, uint256 b)\n        internal\n        pure\n        returns (uint256)\n    {\n        if (a == 0) {\n            return 0;\n        }\n        uint256 c = a * b;\n        if (c / a != b) {\n            revert(\"SafeMath: multiplication overflow\");\n        }\n        return c;\n    }\n\n    function safeDiv(uint256 a, uint256 b)\n        internal\n        pure\n        returns (uint256)\n    {\n        if (b == 0) {\n            revert(\"SafeMath: division by 0\");\n        }\n        uint256 c = a / b;\n        return c;\n    }\n\n    function safeSub(uint256 a, uint256 b)\n        internal\n        pure\n        returns (uint256)\n    {\n        if (b > a) {\n            revert(\"SafeMath: subtraction underflow\");\n        }\n        return a - b;\n    }\n\n    function safeAdd(uint256 a, uint256 b)\n        internal\n        pure\n        returns (uint256)\n    {\n        uint256 c = a + b;\n        if (c < a) {\n            revert(\"SafeMath: addition overflow\");\n        }\n        return c;\n    }\n\n    function max256(uint256 a, uint256 b)\n        internal\n        pure\n        returns (uint256)\n    {\n        return a >= b ? a : b;\n    }\n\n    function min256(uint256 a, uint256 b)\n        internal\n        pure\n        returns (uint256)\n    {\n        return a < b ? a : b;\n    }\n\n    function safeMul128(uint128 a, uint128 b)\n        internal\n        pure\n        returns (uint128)\n    {\n        if (a == 0) {\n            return 0;\n        }\n        uint128 c = a * b;\n        if (c / a != b) {\n            revert(\"SafeMath: multiplication overflow\");\n        }\n        return c;\n    }\n\n    function safeDiv128(uint128 a, uint128 b)\n        internal\n        pure\n        returns (uint128)\n    {\n        if (b == 0) {\n            revert(\"SafeMath: division by 0\");\n        }\n        uint128 c = a / b;\n        return c;\n    }\n\n    function safeSub128(uint128 a, uint128 b)\n        internal\n        pure\n        returns (uint128)\n    {\n        if (b > a) {\n            revert(\"SafeMath: subtraction underflow\");\n        }\n        return a - b;\n    }\n\n    function safeAdd128(uint128 a, uint128 b)\n        internal\n        pure\n        returns (uint128)\n    {\n        uint128 c = a + b;\n        if (c < a) {\n            revert(\"SafeMath: addition overflow\");\n        }\n        return c;\n    }\n\n    function max128(uint128 a, uint128 b)\n        internal\n        pure\n        returns (uint128)\n    {\n        return a >= b ? a : b;\n    }\n\n    function min128(uint128 a, uint128 b)\n        internal\n        pure\n        returns (uint128)\n    {\n        return a < b ? a : b;\n    }\n\n    function safeDowncastToUint128(uint256 a)\n        internal\n        pure\n        returns (uint128)\n    {\n        if (a > type(uint128).max) {\n            revert(\"SafeMath: cannot downcast uint256 to uint128\");\n        }\n        return uint128(a);\n    }\n\n    function getPartialAmountCeil(\n        uint256 numerator,\n        uint256 denominator,\n        uint256 target\n    )\n        internal\n        pure\n        returns (uint256 partialAmount)\n    {\n        // safeDiv computes `floor(a / b)`. We use the identity (a, b integer):\n        //       ceil(a / b) = floor((a + b - 1) / b)\n        // To implement `ceil(a / b)` using safeDiv.\n        partialAmount = numerator.safeMul(target)\n            .safeAdd(denominator.safeSub(1))\n            .safeDiv(denominator);\n\n        return partialAmount;\n    }\n\n    function getPartialAmountFloor(\n        uint256 numerator,\n        uint256 denominator,\n        uint256 target\n    )\n        internal\n        pure\n        returns (uint256 partialAmount)\n    {\n        partialAmount = numerator.safeMul(target).safeDiv(denominator);\n        return partialAmount;\n    }\n}\n"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.6.12+commit.27d51765",
+        "settings": {
+            "remappings": [],
+            "optimizer": {
+                "enabled": true,
+                "runs": 200,
+                "details": {
+                    "yul": true,
+                    "deduplicate": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}

@@ -1,0 +1,361 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "DSTest",
+    "compilerOutput": {
+        "abi": [
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "internalType": "string",
+                        "name": "str",
+                        "type": "string"
+                    }
+                ],
+                "name": "log",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "internalType": "address",
+                        "name": "addr",
+                        "type": "address"
+                    }
+                ],
+                "name": "log_address",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "internalType": "bytes",
+                        "name": "data",
+                        "type": "bytes"
+                    }
+                ],
+                "name": "log_bytes",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "internalType": "bytes32",
+                        "name": "data",
+                        "type": "bytes32"
+                    }
+                ],
+                "name": "log_bytes32",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "internalType": "int256",
+                        "name": "data",
+                        "type": "int256"
+                    }
+                ],
+                "name": "log_int",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "internalType": "string",
+                        "name": "key",
+                        "type": "string"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "address",
+                        "name": "val",
+                        "type": "address"
+                    }
+                ],
+                "name": "log_named_address",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "internalType": "string",
+                        "name": "key",
+                        "type": "string"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "bytes",
+                        "name": "val",
+                        "type": "bytes"
+                    }
+                ],
+                "name": "log_named_bytes",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "internalType": "string",
+                        "name": "key",
+                        "type": "string"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "bytes32",
+                        "name": "val",
+                        "type": "bytes32"
+                    }
+                ],
+                "name": "log_named_bytes32",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "internalType": "string",
+                        "name": "key",
+                        "type": "string"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "int256",
+                        "name": "val",
+                        "type": "int256"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "uint256",
+                        "name": "decimals",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "log_named_decimal_int",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "internalType": "string",
+                        "name": "key",
+                        "type": "string"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "uint256",
+                        "name": "val",
+                        "type": "uint256"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "uint256",
+                        "name": "decimals",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "log_named_decimal_uint",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "internalType": "string",
+                        "name": "key",
+                        "type": "string"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "int256",
+                        "name": "val",
+                        "type": "int256"
+                    }
+                ],
+                "name": "log_named_int",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "internalType": "string",
+                        "name": "key",
+                        "type": "string"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "string",
+                        "name": "val",
+                        "type": "string"
+                    }
+                ],
+                "name": "log_named_string",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "internalType": "string",
+                        "name": "key",
+                        "type": "string"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "uint256",
+                        "name": "val",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "log_named_uint",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "internalType": "string",
+                        "name": "str",
+                        "type": "string"
+                    }
+                ],
+                "name": "log_string",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "internalType": "uint256",
+                        "name": "data",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "log_uint",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "internalType": "bytes",
+                        "name": "data",
+                        "type": "bytes"
+                    }
+                ],
+                "name": "logs",
+                "type": "event"
+            },
+            {
+                "inputs": [],
+                "name": "IS_TEST",
+                "outputs": [
+                    {
+                        "internalType": "bool",
+                        "name": "",
+                        "type": "bool"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "failed",
+                "outputs": [
+                    {
+                        "internalType": "bool",
+                        "name": "",
+                        "type": "bool"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            }
+        ],
+        "devdoc": {
+            "kind": "dev",
+            "methods": {},
+            "version": 1
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x60806040526000805460ff19166001179055348015601c57600080fd5b5060a48061002b6000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c8063ba414fa6146037578063fa7626d4146051575b600080fd5b603d6057565b604080519115158252519081900360200190f35b603d6065565b600054610100900460ff1681565b60005460ff168156fea26469706673582212202cd4738cacd3843222aa264646bbc721e94cd5dacdb1ad1f026caa31a65734c264736f6c634300060c0033",
+                "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 SLOAD PUSH1 0xFF NOT AND PUSH1 0x1 OR SWAP1 SSTORE CALLVALUE DUP1 ISZERO PUSH1 0x1C JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0xA4 DUP1 PUSH2 0x2B PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH1 0x32 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0xBA414FA6 EQ PUSH1 0x37 JUMPI DUP1 PUSH4 0xFA7626D4 EQ PUSH1 0x51 JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x3D PUSH1 0x57 JUMP JUMPDEST PUSH1 0x40 DUP1 MLOAD SWAP2 ISZERO ISZERO DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1 RETURN JUMPDEST PUSH1 0x3D PUSH1 0x65 JUMP JUMPDEST PUSH1 0x0 SLOAD PUSH2 0x100 SWAP1 DIV PUSH1 0xFF AND DUP2 JUMP JUMPDEST PUSH1 0x0 SLOAD PUSH1 0xFF AND DUP2 JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0x2C 0xD4 PUSH20 0x8CACD3843222AA264646BBC721E94CD5DACDB1AD 0x1F MUL PUSH13 0xAA31A65734C264736F6C634300 MOD 0xC STOP CALLER ",
+                "sourceMap": "712:14261:42:-:0;;;1607:26;;;-1:-1:-1;;1607:26:42;1629:4;1607:26;;;712:14261;;;;;;;;;;;;;;;;"
+            },
+            "deployedBytecode": {
+                "immutableReferences": {},
+                "linkReferences": {},
+                "object": "0x6080604052348015600f57600080fd5b506004361060325760003560e01c8063ba414fa6146037578063fa7626d4146051575b600080fd5b603d6057565b604080519115158252519081900360200190f35b603d6065565b600054610100900460ff1681565b60005460ff168156fea26469706673582212202cd4738cacd3843222aa264646bbc721e94cd5dacdb1ad1f026caa31a65734c264736f6c634300060c0033",
+                "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH1 0x32 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0xBA414FA6 EQ PUSH1 0x37 JUMPI DUP1 PUSH4 0xFA7626D4 EQ PUSH1 0x51 JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x3D PUSH1 0x57 JUMP JUMPDEST PUSH1 0x40 DUP1 MLOAD SWAP2 ISZERO ISZERO DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1 RETURN JUMPDEST PUSH1 0x3D PUSH1 0x65 JUMP JUMPDEST PUSH1 0x0 SLOAD PUSH2 0x100 SWAP1 DIV PUSH1 0xFF AND DUP2 JUMP JUMPDEST PUSH1 0x0 SLOAD PUSH1 0xFF AND DUP2 JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0x2C 0xD4 PUSH20 0x8CACD3843222AA264646BBC721E94CD5DACDB1AD 0x1F MUL PUSH13 0xAA31A65734C264736F6C634300 MOD 0xC STOP CALLER ",
+                "sourceMap": "712:14261:42:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1639:18;;;:::i;:::-;;;;;;;;;;;;;;;;;;1607:26;;;:::i;1639:18::-;;;;;;;;;:::o;1607:26::-;;;;;;:::o"
+            }
+        }
+    },
+    "sourceTreeHashHex": "0x6740a7625721bc03d588fea4282a8b095ec6742be4e1387f85ea552bf944ad0e",
+    "sources": {
+        "./DSTest.sol": {
+            "id": 42,
+            "content": "// SPDX-License-Identifier: GPL-3.0-or-later\n\n// This program is free software: you can redistribute it and/or modify\n// it under the terms of the GNU General Public License as published by\n// the Free Software Foundation, either version 3 of the License, or\n// (at your option) any later version.\n\n// This program is distributed in the hope that it will be useful,\n// but WITHOUT ANY WARRANTY; without even the implied warranty of\n// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n// GNU General Public License for more details.\n\n// You should have received a copy of the GNU General Public License\n// along with this program.  If not, see <http://www.gnu.org/licenses/>.\n\npragma solidity ^0.6;\n\ncontract DSTest {\n    event log                    (string str);\n    event logs                   (bytes data);\n\n    event log_address            (address addr);\n    event log_bytes32            (bytes32 data);\n    event log_int                (int data);\n    event log_uint               (uint data);\n    event log_bytes              (bytes data);\n    event log_string             (string str);\n\n    event log_named_address      (string key, address val);\n    event log_named_bytes32      (string key, bytes32 val);\n    event log_named_decimal_int  (string key, int val, uint decimals);\n    event log_named_decimal_uint (string key, uint val, uint decimals);\n    event log_named_int          (string key, int val);\n    event log_named_uint         (string key, uint val);\n    event log_named_bytes        (string key, bytes val);\n    event log_named_string       (string key, string val);\n\n    bool public IS_TEST = true;\n    bool public failed;\n\n    address constant HEVM_ADDRESS =\n        address(bytes20(uint160(uint256(keccak256('hevm cheat code')))));\n\n    modifier mayRevert() { _; }\n    modifier testopts(string memory) { _; }\n\n    function fail() internal {\n        failed = true;\n    }\n\n    modifier logs_gas() {\n        uint startGas = gasleft();\n        _;\n        uint endGas = gasleft();\n        emit log_named_uint(\"gas\", startGas - endGas);\n    }\n\n    function assertTrue(bool condition) internal {\n        if (!condition) {\n            emit log(\"Error: Assertion Failed\");\n            fail();\n        }\n    }\n\n    function assertTrue(bool condition, string memory err) internal {\n        if (!condition) {\n            emit log_named_string(\"Error\", err);\n            assertTrue(condition);\n        }\n    }\n\n    function assertEq(address a, address b) internal {\n        if (a != b) {\n            emit log(\"Error: a == b not satisfied [address]\");\n            emit log_named_address(\"  Expected\", b);\n            emit log_named_address(\"    Actual\", a);\n            fail();\n        }\n    }\n    function assertEq(address a, address b, string memory err) internal {\n        if (a != b) {\n            emit log_named_string (\"Error\", err);\n            assertEq(a, b);\n        }\n    }\n\n    function assertEq(bytes32 a, bytes32 b) internal {\n        if (a != b) {\n            emit log(\"Error: a == b not satisfied [bytes32]\");\n            emit log_named_bytes32(\"  Expected\", b);\n            emit log_named_bytes32(\"    Actual\", a);\n            fail();\n        }\n    }\n    function assertEq(bytes32 a, bytes32 b, string memory err) internal {\n        if (a != b) {\n            emit log_named_string (\"Error\", err);\n            assertEq(a, b);\n        }\n    }\n    function assertEq32(bytes32 a, bytes32 b) internal {\n        assertEq(a, b);\n    }\n    function assertEq32(bytes32 a, bytes32 b, string memory err) internal {\n        assertEq(a, b, err);\n    }\n\n    function assertEq(int a, int b) internal {\n        if (a != b) {\n            emit log(\"Error: a == b not satisfied [int]\");\n            emit log_named_int(\"  Expected\", b);\n            emit log_named_int(\"    Actual\", a);\n            fail();\n        }\n    }\n    function assertEq(int a, int b, string memory err) internal {\n        if (a != b) {\n            emit log_named_string(\"Error\", err);\n            assertEq(a, b);\n        }\n    }\n    function assertEq(uint a, uint b) internal {\n        if (a != b) {\n            emit log(\"Error: a == b not satisfied [uint]\");\n            emit log_named_uint(\"  Expected\", b);\n            emit log_named_uint(\"    Actual\", a);\n            fail();\n        }\n    }\n    function assertEq(uint a, uint b, string memory err) internal {\n        if (a != b) {\n            emit log_named_string(\"Error\", err);\n            assertEq(a, b);\n        }\n    }\n    function assertEqDecimal(int a, int b, uint decimals) internal {\n        if (a != b) {\n            emit log(\"Error: a == b not satisfied [decimal int]\");\n            emit log_named_decimal_int(\"  Expected\", b, decimals);\n            emit log_named_decimal_int(\"    Actual\", a, decimals);\n            fail();\n        }\n    }\n    function assertEqDecimal(int a, int b, uint decimals, string memory err) internal {\n        if (a != b) {\n            emit log_named_string(\"Error\", err);\n            assertEqDecimal(a, b, decimals);\n        }\n    }\n    function assertEqDecimal(uint a, uint b, uint decimals) internal {\n        if (a != b) {\n            emit log(\"Error: a == b not satisfied [decimal uint]\");\n            emit log_named_decimal_uint(\"  Expected\", b, decimals);\n            emit log_named_decimal_uint(\"    Actual\", a, decimals);\n            fail();\n        }\n    }\n    function assertEqDecimal(uint a, uint b, uint decimals, string memory err) internal {\n        if (a != b) {\n            emit log_named_string(\"Error\", err);\n            assertEqDecimal(a, b, decimals);\n        }\n    }\n\n    function assertGt(uint a, uint b) internal {\n        if (a <= b) {\n            emit log(\"Error: a > b not satisfied [uint]\");\n            emit log_named_uint(\"  Value a\", a);\n            emit log_named_uint(\"  Value b\", b);\n            fail();\n        }\n    }\n    function assertGt(uint a, uint b, string memory err) internal {\n        if (a <= b) {\n            emit log_named_string(\"Error\", err);\n            assertGt(a, b);\n        }\n    }\n    function assertGt(int a, int b) internal {\n        if (a <= b) {\n            emit log(\"Error: a > b not satisfied [int]\");\n            emit log_named_int(\"  Value a\", a);\n            emit log_named_int(\"  Value b\", b);\n            fail();\n        }\n    }\n    function assertGt(int a, int b, string memory err) internal {\n        if (a <= b) {\n            emit log_named_string(\"Error\", err);\n            assertGt(a, b);\n        }\n    }\n    function assertGtDecimal(int a, int b, uint decimals) internal {\n        if (a <= b) {\n            emit log(\"Error: a > b not satisfied [decimal int]\");\n            emit log_named_decimal_int(\"  Value a\", a, decimals);\n            emit log_named_decimal_int(\"  Value b\", b, decimals);\n            fail();\n        }\n    }\n    function assertGtDecimal(int a, int b, uint decimals, string memory err) internal {\n        if (a <= b) {\n            emit log_named_string(\"Error\", err);\n            assertGtDecimal(a, b, decimals);\n        }\n    }\n    function assertGtDecimal(uint a, uint b, uint decimals) internal {\n        if (a <= b) {\n            emit log(\"Error: a > b not satisfied [decimal uint]\");\n            emit log_named_decimal_uint(\"  Value a\", a, decimals);\n            emit log_named_decimal_uint(\"  Value b\", b, decimals);\n            fail();\n        }\n    }\n    function assertGtDecimal(uint a, uint b, uint decimals, string memory err) internal {\n        if (a <= b) {\n            emit log_named_string(\"Error\", err);\n            assertGtDecimal(a, b, decimals);\n        }\n    }\n\n    function assertGe(uint a, uint b) internal {\n        if (a < b) {\n            emit log(\"Error: a >= b not satisfied [uint]\");\n            emit log_named_uint(\"  Value a\", a);\n            emit log_named_uint(\"  Value b\", b);\n            fail();\n        }\n    }\n    function assertGe(uint a, uint b, string memory err) internal {\n        if (a < b) {\n            emit log_named_string(\"Error\", err);\n            assertGe(a, b);\n        }\n    }\n    function assertGe(int a, int b) internal {\n        if (a < b) {\n            emit log(\"Error: a >= b not satisfied [int]\");\n            emit log_named_int(\"  Value a\", a);\n            emit log_named_int(\"  Value b\", b);\n            fail();\n        }\n    }\n    function assertGe(int a, int b, string memory err) internal {\n        if (a < b) {\n            emit log_named_string(\"Error\", err);\n            assertGe(a, b);\n        }\n    }\n    function assertGeDecimal(int a, int b, uint decimals) internal {\n        if (a < b) {\n            emit log(\"Error: a >= b not satisfied [decimal int]\");\n            emit log_named_decimal_int(\"  Value a\", a, decimals);\n            emit log_named_decimal_int(\"  Value b\", b, decimals);\n            fail();\n        }\n    }\n    function assertGeDecimal(int a, int b, uint decimals, string memory err) internal {\n        if (a < b) {\n            emit log_named_string(\"Error\", err);\n            assertGeDecimal(a, b, decimals);\n        }\n    }\n    function assertGeDecimal(uint a, uint b, uint decimals) internal {\n        if (a < b) {\n            emit log(\"Error: a >= b not satisfied [decimal uint]\");\n            emit log_named_decimal_uint(\"  Value a\", a, decimals);\n            emit log_named_decimal_uint(\"  Value b\", b, decimals);\n            fail();\n        }\n    }\n    function assertGeDecimal(uint a, uint b, uint decimals, string memory err) internal {\n        if (a < b) {\n            emit log_named_string(\"Error\", err);\n            assertGeDecimal(a, b, decimals);\n        }\n    }\n\n    function assertLt(uint a, uint b) internal {\n        if (a >= b) {\n            emit log(\"Error: a < b not satisfied [uint]\");\n            emit log_named_uint(\"  Value a\", a);\n            emit log_named_uint(\"  Value b\", b);\n            fail();\n        }\n    }\n    function assertLt(uint a, uint b, string memory err) internal {\n        if (a >= b) {\n            emit log_named_string(\"Error\", err);\n            assertLt(a, b);\n        }\n    }\n    function assertLt(int a, int b) internal {\n        if (a >= b) {\n            emit log(\"Error: a < b not satisfied [int]\");\n            emit log_named_int(\"  Value a\", a);\n            emit log_named_int(\"  Value b\", b);\n            fail();\n        }\n    }\n    function assertLt(int a, int b, string memory err) internal {\n        if (a >= b) {\n            emit log_named_string(\"Error\", err);\n            assertLt(a, b);\n        }\n    }\n    function assertLtDecimal(int a, int b, uint decimals) internal {\n        if (a >= b) {\n            emit log(\"Error: a < b not satisfied [decimal int]\");\n            emit log_named_decimal_int(\"  Value a\", a, decimals);\n            emit log_named_decimal_int(\"  Value b\", b, decimals);\n            fail();\n        }\n    }\n    function assertLtDecimal(int a, int b, uint decimals, string memory err) internal {\n        if (a >= b) {\n            emit log_named_string(\"Error\", err);\n            assertLtDecimal(a, b, decimals);\n        }\n    }\n    function assertLtDecimal(uint a, uint b, uint decimals) internal {\n        if (a >= b) {\n            emit log(\"Error: a < b not satisfied [decimal uint]\");\n            emit log_named_decimal_uint(\"  Value a\", a, decimals);\n            emit log_named_decimal_uint(\"  Value b\", b, decimals);\n            fail();\n        }\n    }\n    function assertLtDecimal(uint a, uint b, uint decimals, string memory err) internal {\n        if (a >= b) {\n            emit log_named_string(\"Error\", err);\n            assertLtDecimal(a, b, decimals);\n        }\n    }\n\n    function assertLe(uint a, uint b) internal {\n        if (a > b) {\n            emit log(\"Error: a <= b not satisfied [uint]\");\n            emit log_named_uint(\"  Value a\", a);\n            emit log_named_uint(\"  Value b\", b);\n            fail();\n        }\n    }\n    function assertLe(uint a, uint b, string memory err) internal {\n        if (a > b) {\n            emit log_named_string(\"Error\", err);\n            assertLe(a, b);\n        }\n    }\n    function assertLe(int a, int b) internal {\n        if (a > b) {\n            emit log(\"Error: a <= b not satisfied [int]\");\n            emit log_named_int(\"  Value a\", a);\n            emit log_named_int(\"  Value b\", b);\n            fail();\n        }\n    }\n    function assertLe(int a, int b, string memory err) internal {\n        if (a > b) {\n            emit log_named_string(\"Error\", err);\n            assertLe(a, b);\n        }\n    }\n    function assertLeDecimal(int a, int b, uint decimals) internal {\n        if (a > b) {\n            emit log(\"Error: a <= b not satisfied [decimal int]\");\n            emit log_named_decimal_int(\"  Value a\", a, decimals);\n            emit log_named_decimal_int(\"  Value b\", b, decimals);\n            fail();\n        }\n    }\n    function assertLeDecimal(int a, int b, uint decimals, string memory err) internal {\n        if (a > b) {\n            emit log_named_string(\"Error\", err);\n            assertLeDecimal(a, b, decimals);\n        }\n    }\n    function assertLeDecimal(uint a, uint b, uint decimals) internal {\n        if (a > b) {\n            emit log(\"Error: a <= b not satisfied [decimal uint]\");\n            emit log_named_decimal_uint(\"  Value a\", a, decimals);\n            emit log_named_decimal_uint(\"  Value b\", b, decimals);\n            fail();\n        }\n    }\n    function assertLeDecimal(uint a, uint b, uint decimals, string memory err) internal {\n        if (a > b) {\n            emit log_named_string(\"Error\", err);\n            assertGeDecimal(a, b, decimals);\n        }\n    }\n\n    function assertEq(string memory a, string memory b) internal {\n        if (keccak256(abi.encodePacked(a)) != keccak256(abi.encodePacked(b))) {\n            emit log(\"Error: a == b not satisfied [string]\");\n            emit log_named_string(\"  Value a\", a);\n            emit log_named_string(\"  Value b\", b);\n            fail();\n        }\n    }\n    function assertEq(string memory a, string memory b, string memory err) internal {\n        if (keccak256(abi.encodePacked(a)) != keccak256(abi.encodePacked(b))) {\n            emit log_named_string(\"Error\", err);\n            assertEq(a, b);\n        }\n    }\n\n    function checkEq0(bytes memory a, bytes memory b) internal pure returns (bool ok) {\n        ok = true;\n        if (a.length == b.length) {\n            for (uint i = 0; i < a.length; i++) {\n                if (a[i] != b[i]) {\n                    ok = false;\n                }\n            }\n        } else {\n            ok = false;\n        }\n    }\n    function assertEq0(bytes memory a, bytes memory b) internal {\n        if (!checkEq0(a, b)) {\n            emit log(\"Error: a == b not satisfied [bytes]\");\n            emit log_named_bytes(\"  Expected\", a);\n            emit log_named_bytes(\"    Actual\", b);\n            fail();\n        }\n    }\n    function assertEq0(bytes memory a, bytes memory b, string memory err) internal {\n        if (!checkEq0(a, b)) {\n            emit log_named_string(\"Error\", err);\n            assertEq0(a, b);\n        }\n    }\n}\n"
+        }
+    },
+    "sourceCodes": {
+        "./DSTest.sol": "// SPDX-License-Identifier: GPL-3.0-or-later\n\n// This program is free software: you can redistribute it and/or modify\n// it under the terms of the GNU General Public License as published by\n// the Free Software Foundation, either version 3 of the License, or\n// (at your option) any later version.\n\n// This program is distributed in the hope that it will be useful,\n// but WITHOUT ANY WARRANTY; without even the implied warranty of\n// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n// GNU General Public License for more details.\n\n// You should have received a copy of the GNU General Public License\n// along with this program.  If not, see <http://www.gnu.org/licenses/>.\n\npragma solidity ^0.6;\n\ncontract DSTest {\n    event log                    (string str);\n    event logs                   (bytes data);\n\n    event log_address            (address addr);\n    event log_bytes32            (bytes32 data);\n    event log_int                (int data);\n    event log_uint               (uint data);\n    event log_bytes              (bytes data);\n    event log_string             (string str);\n\n    event log_named_address      (string key, address val);\n    event log_named_bytes32      (string key, bytes32 val);\n    event log_named_decimal_int  (string key, int val, uint decimals);\n    event log_named_decimal_uint (string key, uint val, uint decimals);\n    event log_named_int          (string key, int val);\n    event log_named_uint         (string key, uint val);\n    event log_named_bytes        (string key, bytes val);\n    event log_named_string       (string key, string val);\n\n    bool public IS_TEST = true;\n    bool public failed;\n\n    address constant HEVM_ADDRESS =\n        address(bytes20(uint160(uint256(keccak256('hevm cheat code')))));\n\n    modifier mayRevert() { _; }\n    modifier testopts(string memory) { _; }\n\n    function fail() internal {\n        failed = true;\n    }\n\n    modifier logs_gas() {\n        uint startGas = gasleft();\n        _;\n        uint endGas = gasleft();\n        emit log_named_uint(\"gas\", startGas - endGas);\n    }\n\n    function assertTrue(bool condition) internal {\n        if (!condition) {\n            emit log(\"Error: Assertion Failed\");\n            fail();\n        }\n    }\n\n    function assertTrue(bool condition, string memory err) internal {\n        if (!condition) {\n            emit log_named_string(\"Error\", err);\n            assertTrue(condition);\n        }\n    }\n\n    function assertEq(address a, address b) internal {\n        if (a != b) {\n            emit log(\"Error: a == b not satisfied [address]\");\n            emit log_named_address(\"  Expected\", b);\n            emit log_named_address(\"    Actual\", a);\n            fail();\n        }\n    }\n    function assertEq(address a, address b, string memory err) internal {\n        if (a != b) {\n            emit log_named_string (\"Error\", err);\n            assertEq(a, b);\n        }\n    }\n\n    function assertEq(bytes32 a, bytes32 b) internal {\n        if (a != b) {\n            emit log(\"Error: a == b not satisfied [bytes32]\");\n            emit log_named_bytes32(\"  Expected\", b);\n            emit log_named_bytes32(\"    Actual\", a);\n            fail();\n        }\n    }\n    function assertEq(bytes32 a, bytes32 b, string memory err) internal {\n        if (a != b) {\n            emit log_named_string (\"Error\", err);\n            assertEq(a, b);\n        }\n    }\n    function assertEq32(bytes32 a, bytes32 b) internal {\n        assertEq(a, b);\n    }\n    function assertEq32(bytes32 a, bytes32 b, string memory err) internal {\n        assertEq(a, b, err);\n    }\n\n    function assertEq(int a, int b) internal {\n        if (a != b) {\n            emit log(\"Error: a == b not satisfied [int]\");\n            emit log_named_int(\"  Expected\", b);\n            emit log_named_int(\"    Actual\", a);\n            fail();\n        }\n    }\n    function assertEq(int a, int b, string memory err) internal {\n        if (a != b) {\n            emit log_named_string(\"Error\", err);\n            assertEq(a, b);\n        }\n    }\n    function assertEq(uint a, uint b) internal {\n        if (a != b) {\n            emit log(\"Error: a == b not satisfied [uint]\");\n            emit log_named_uint(\"  Expected\", b);\n            emit log_named_uint(\"    Actual\", a);\n            fail();\n        }\n    }\n    function assertEq(uint a, uint b, string memory err) internal {\n        if (a != b) {\n            emit log_named_string(\"Error\", err);\n            assertEq(a, b);\n        }\n    }\n    function assertEqDecimal(int a, int b, uint decimals) internal {\n        if (a != b) {\n            emit log(\"Error: a == b not satisfied [decimal int]\");\n            emit log_named_decimal_int(\"  Expected\", b, decimals);\n            emit log_named_decimal_int(\"    Actual\", a, decimals);\n            fail();\n        }\n    }\n    function assertEqDecimal(int a, int b, uint decimals, string memory err) internal {\n        if (a != b) {\n            emit log_named_string(\"Error\", err);\n            assertEqDecimal(a, b, decimals);\n        }\n    }\n    function assertEqDecimal(uint a, uint b, uint decimals) internal {\n        if (a != b) {\n            emit log(\"Error: a == b not satisfied [decimal uint]\");\n            emit log_named_decimal_uint(\"  Expected\", b, decimals);\n            emit log_named_decimal_uint(\"    Actual\", a, decimals);\n            fail();\n        }\n    }\n    function assertEqDecimal(uint a, uint b, uint decimals, string memory err) internal {\n        if (a != b) {\n            emit log_named_string(\"Error\", err);\n            assertEqDecimal(a, b, decimals);\n        }\n    }\n\n    function assertGt(uint a, uint b) internal {\n        if (a <= b) {\n            emit log(\"Error: a > b not satisfied [uint]\");\n            emit log_named_uint(\"  Value a\", a);\n            emit log_named_uint(\"  Value b\", b);\n            fail();\n        }\n    }\n    function assertGt(uint a, uint b, string memory err) internal {\n        if (a <= b) {\n            emit log_named_string(\"Error\", err);\n            assertGt(a, b);\n        }\n    }\n    function assertGt(int a, int b) internal {\n        if (a <= b) {\n            emit log(\"Error: a > b not satisfied [int]\");\n            emit log_named_int(\"  Value a\", a);\n            emit log_named_int(\"  Value b\", b);\n            fail();\n        }\n    }\n    function assertGt(int a, int b, string memory err) internal {\n        if (a <= b) {\n            emit log_named_string(\"Error\", err);\n            assertGt(a, b);\n        }\n    }\n    function assertGtDecimal(int a, int b, uint decimals) internal {\n        if (a <= b) {\n            emit log(\"Error: a > b not satisfied [decimal int]\");\n            emit log_named_decimal_int(\"  Value a\", a, decimals);\n            emit log_named_decimal_int(\"  Value b\", b, decimals);\n            fail();\n        }\n    }\n    function assertGtDecimal(int a, int b, uint decimals, string memory err) internal {\n        if (a <= b) {\n            emit log_named_string(\"Error\", err);\n            assertGtDecimal(a, b, decimals);\n        }\n    }\n    function assertGtDecimal(uint a, uint b, uint decimals) internal {\n        if (a <= b) {\n            emit log(\"Error: a > b not satisfied [decimal uint]\");\n            emit log_named_decimal_uint(\"  Value a\", a, decimals);\n            emit log_named_decimal_uint(\"  Value b\", b, decimals);\n            fail();\n        }\n    }\n    function assertGtDecimal(uint a, uint b, uint decimals, string memory err) internal {\n        if (a <= b) {\n            emit log_named_string(\"Error\", err);\n            assertGtDecimal(a, b, decimals);\n        }\n    }\n\n    function assertGe(uint a, uint b) internal {\n        if (a < b) {\n            emit log(\"Error: a >= b not satisfied [uint]\");\n            emit log_named_uint(\"  Value a\", a);\n            emit log_named_uint(\"  Value b\", b);\n            fail();\n        }\n    }\n    function assertGe(uint a, uint b, string memory err) internal {\n        if (a < b) {\n            emit log_named_string(\"Error\", err);\n            assertGe(a, b);\n        }\n    }\n    function assertGe(int a, int b) internal {\n        if (a < b) {\n            emit log(\"Error: a >= b not satisfied [int]\");\n            emit log_named_int(\"  Value a\", a);\n            emit log_named_int(\"  Value b\", b);\n            fail();\n        }\n    }\n    function assertGe(int a, int b, string memory err) internal {\n        if (a < b) {\n            emit log_named_string(\"Error\", err);\n            assertGe(a, b);\n        }\n    }\n    function assertGeDecimal(int a, int b, uint decimals) internal {\n        if (a < b) {\n            emit log(\"Error: a >= b not satisfied [decimal int]\");\n            emit log_named_decimal_int(\"  Value a\", a, decimals);\n            emit log_named_decimal_int(\"  Value b\", b, decimals);\n            fail();\n        }\n    }\n    function assertGeDecimal(int a, int b, uint decimals, string memory err) internal {\n        if (a < b) {\n            emit log_named_string(\"Error\", err);\n            assertGeDecimal(a, b, decimals);\n        }\n    }\n    function assertGeDecimal(uint a, uint b, uint decimals) internal {\n        if (a < b) {\n            emit log(\"Error: a >= b not satisfied [decimal uint]\");\n            emit log_named_decimal_uint(\"  Value a\", a, decimals);\n            emit log_named_decimal_uint(\"  Value b\", b, decimals);\n            fail();\n        }\n    }\n    function assertGeDecimal(uint a, uint b, uint decimals, string memory err) internal {\n        if (a < b) {\n            emit log_named_string(\"Error\", err);\n            assertGeDecimal(a, b, decimals);\n        }\n    }\n\n    function assertLt(uint a, uint b) internal {\n        if (a >= b) {\n            emit log(\"Error: a < b not satisfied [uint]\");\n            emit log_named_uint(\"  Value a\", a);\n            emit log_named_uint(\"  Value b\", b);\n            fail();\n        }\n    }\n    function assertLt(uint a, uint b, string memory err) internal {\n        if (a >= b) {\n            emit log_named_string(\"Error\", err);\n            assertLt(a, b);\n        }\n    }\n    function assertLt(int a, int b) internal {\n        if (a >= b) {\n            emit log(\"Error: a < b not satisfied [int]\");\n            emit log_named_int(\"  Value a\", a);\n            emit log_named_int(\"  Value b\", b);\n            fail();\n        }\n    }\n    function assertLt(int a, int b, string memory err) internal {\n        if (a >= b) {\n            emit log_named_string(\"Error\", err);\n            assertLt(a, b);\n        }\n    }\n    function assertLtDecimal(int a, int b, uint decimals) internal {\n        if (a >= b) {\n            emit log(\"Error: a < b not satisfied [decimal int]\");\n            emit log_named_decimal_int(\"  Value a\", a, decimals);\n            emit log_named_decimal_int(\"  Value b\", b, decimals);\n            fail();\n        }\n    }\n    function assertLtDecimal(int a, int b, uint decimals, string memory err) internal {\n        if (a >= b) {\n            emit log_named_string(\"Error\", err);\n            assertLtDecimal(a, b, decimals);\n        }\n    }\n    function assertLtDecimal(uint a, uint b, uint decimals) internal {\n        if (a >= b) {\n            emit log(\"Error: a < b not satisfied [decimal uint]\");\n            emit log_named_decimal_uint(\"  Value a\", a, decimals);\n            emit log_named_decimal_uint(\"  Value b\", b, decimals);\n            fail();\n        }\n    }\n    function assertLtDecimal(uint a, uint b, uint decimals, string memory err) internal {\n        if (a >= b) {\n            emit log_named_string(\"Error\", err);\n            assertLtDecimal(a, b, decimals);\n        }\n    }\n\n    function assertLe(uint a, uint b) internal {\n        if (a > b) {\n            emit log(\"Error: a <= b not satisfied [uint]\");\n            emit log_named_uint(\"  Value a\", a);\n            emit log_named_uint(\"  Value b\", b);\n            fail();\n        }\n    }\n    function assertLe(uint a, uint b, string memory err) internal {\n        if (a > b) {\n            emit log_named_string(\"Error\", err);\n            assertLe(a, b);\n        }\n    }\n    function assertLe(int a, int b) internal {\n        if (a > b) {\n            emit log(\"Error: a <= b not satisfied [int]\");\n            emit log_named_int(\"  Value a\", a);\n            emit log_named_int(\"  Value b\", b);\n            fail();\n        }\n    }\n    function assertLe(int a, int b, string memory err) internal {\n        if (a > b) {\n            emit log_named_string(\"Error\", err);\n            assertLe(a, b);\n        }\n    }\n    function assertLeDecimal(int a, int b, uint decimals) internal {\n        if (a > b) {\n            emit log(\"Error: a <= b not satisfied [decimal int]\");\n            emit log_named_decimal_int(\"  Value a\", a, decimals);\n            emit log_named_decimal_int(\"  Value b\", b, decimals);\n            fail();\n        }\n    }\n    function assertLeDecimal(int a, int b, uint decimals, string memory err) internal {\n        if (a > b) {\n            emit log_named_string(\"Error\", err);\n            assertLeDecimal(a, b, decimals);\n        }\n    }\n    function assertLeDecimal(uint a, uint b, uint decimals) internal {\n        if (a > b) {\n            emit log(\"Error: a <= b not satisfied [decimal uint]\");\n            emit log_named_decimal_uint(\"  Value a\", a, decimals);\n            emit log_named_decimal_uint(\"  Value b\", b, decimals);\n            fail();\n        }\n    }\n    function assertLeDecimal(uint a, uint b, uint decimals, string memory err) internal {\n        if (a > b) {\n            emit log_named_string(\"Error\", err);\n            assertGeDecimal(a, b, decimals);\n        }\n    }\n\n    function assertEq(string memory a, string memory b) internal {\n        if (keccak256(abi.encodePacked(a)) != keccak256(abi.encodePacked(b))) {\n            emit log(\"Error: a == b not satisfied [string]\");\n            emit log_named_string(\"  Value a\", a);\n            emit log_named_string(\"  Value b\", b);\n            fail();\n        }\n    }\n    function assertEq(string memory a, string memory b, string memory err) internal {\n        if (keccak256(abi.encodePacked(a)) != keccak256(abi.encodePacked(b))) {\n            emit log_named_string(\"Error\", err);\n            assertEq(a, b);\n        }\n    }\n\n    function checkEq0(bytes memory a, bytes memory b) internal pure returns (bool ok) {\n        ok = true;\n        if (a.length == b.length) {\n            for (uint i = 0; i < a.length; i++) {\n                if (a[i] != b[i]) {\n                    ok = false;\n                }\n            }\n        } else {\n            ok = false;\n        }\n    }\n    function assertEq0(bytes memory a, bytes memory b) internal {\n        if (!checkEq0(a, b)) {\n            emit log(\"Error: a == b not satisfied [bytes]\");\n            emit log_named_bytes(\"  Expected\", a);\n            emit log_named_bytes(\"    Actual\", b);\n            fail();\n        }\n    }\n    function assertEq0(bytes memory a, bytes memory b, string memory err) internal {\n        if (!checkEq0(a, b)) {\n            emit log_named_string(\"Error\", err);\n            assertEq0(a, b);\n        }\n    }\n}\n"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.6.12+commit.27d51765",
+        "settings": {
+            "remappings": [],
+            "optimizer": {
+                "enabled": true,
+                "runs": 200,
+                "details": {
+                    "yul": true,
+                    "deduplicate": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}
