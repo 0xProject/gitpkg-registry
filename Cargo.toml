@@ -1,0 +1,21 @@
+[package]
+name = "fast-abi"
+version = "0.0.1"
+authors = ["Jacob Evans <jacob@dekz.net>"]
+license = "MIT"
+build = "build.rs"
+edition = "2018"
+exclude = ["artifacts.json", "index.node"]
+
+[lib]
+crate-type = ["cdylib"]
+
+
+[build-dependencies]
+neon-build = "0.8.0"
+
+[dependencies]
+neon = "0.8.1"
+anyhow = "1.0.40"
+hex = "0.4.2"
+ethabi = "14.0"
