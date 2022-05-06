@@ -1,0 +1,155 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "IBalancerV2Vault",
+    "compilerOutput": {
+        "abi": [
+            {
+                "inputs": [
+                    {
+                        "internalType": "enum IBalancerV2Vault.SwapKind",
+                        "name": "kind",
+                        "type": "uint8"
+                    },
+                    {
+                        "components": [
+                            {
+                                "internalType": "bytes32",
+                                "name": "poolId",
+                                "type": "bytes32"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "assetInIndex",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "assetOutIndex",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "amount",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "bytes",
+                                "name": "userData",
+                                "type": "bytes"
+                            }
+                        ],
+                        "internalType": "struct IBalancerV2Vault.BatchSwapStep[]",
+                        "name": "swaps",
+                        "type": "tuple[]"
+                    },
+                    {
+                        "internalType": "address[]",
+                        "name": "assets",
+                        "type": "address[]"
+                    },
+                    {
+                        "components": [
+                            {
+                                "internalType": "address",
+                                "name": "sender",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "bool",
+                                "name": "fromInternalBalance",
+                                "type": "bool"
+                            },
+                            {
+                                "internalType": "address payable",
+                                "name": "recipient",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "bool",
+                                "name": "toInternalBalance",
+                                "type": "bool"
+                            }
+                        ],
+                        "internalType": "struct IBalancerV2Vault.FundManagement",
+                        "name": "funds",
+                        "type": "tuple"
+                    }
+                ],
+                "name": "queryBatchSwap",
+                "outputs": [
+                    {
+                        "internalType": "int256[]",
+                        "name": "assetDeltas",
+                        "type": "int256[]"
+                    }
+                ],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            }
+        ],
+        "devdoc": {
+            "details": "Minimal Balancer V2 Vault interface      for documentation refer to https://github.com/balancer-labs/balancer-core-v2/blob/master/contracts/vault/interfaces/IVault.sol",
+            "kind": "dev",
+            "methods": {},
+            "version": 1
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            },
+            "deployedBytecode": {
+                "immutableReferences": {},
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            }
+        }
+    },
+    "sourceTreeHashHex": "0xe964d09a8e31c23b91ac2024205b9a568cd16834b469cf20ce755a765f9b9b8a",
+    "sources": {
+        "./IBalancerV2Vault.sol": {
+            "id": 30,
+            "content": "// SPDX-License-Identifier: Apache-2.0\n/*\n\n  Copyright 2020 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.6;\npragma experimental ABIEncoderV2;\n\n/// @dev Minimal Balancer V2 Vault interface\n///      for documentation refer to https://github.com/balancer-labs/balancer-core-v2/blob/master/contracts/vault/interfaces/IVault.sol\ninterface IBalancerV2Vault {\n    enum SwapKind { GIVEN_IN, GIVEN_OUT }\n\n    struct BatchSwapStep {\n        bytes32 poolId;\n        uint256 assetInIndex;\n        uint256 assetOutIndex;\n        uint256 amount;\n        bytes userData;\n    }\n\n    struct FundManagement {\n        address sender;\n        bool fromInternalBalance;\n        address payable recipient;\n        bool toInternalBalance;\n    }\n\n    struct BalancerV2PoolInfo {\n        bytes32 poolId;\n        address vault;\n    }\n\n    function queryBatchSwap(\n        SwapKind kind,\n        BatchSwapStep[] calldata swaps,\n        address[] calldata assets,\n        FundManagement calldata funds\n    ) external returns (int256[] memory assetDeltas);\n}\n"
+        }
+    },
+    "sourceCodes": {
+        "./IBalancerV2Vault.sol": "// SPDX-License-Identifier: Apache-2.0\n/*\n\n  Copyright 2020 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.6;\npragma experimental ABIEncoderV2;\n\n/// @dev Minimal Balancer V2 Vault interface\n///      for documentation refer to https://github.com/balancer-labs/balancer-core-v2/blob/master/contracts/vault/interfaces/IVault.sol\ninterface IBalancerV2Vault {\n    enum SwapKind { GIVEN_IN, GIVEN_OUT }\n\n    struct BatchSwapStep {\n        bytes32 poolId;\n        uint256 assetInIndex;\n        uint256 assetOutIndex;\n        uint256 amount;\n        bytes userData;\n    }\n\n    struct FundManagement {\n        address sender;\n        bool fromInternalBalance;\n        address payable recipient;\n        bool toInternalBalance;\n    }\n\n    struct BalancerV2PoolInfo {\n        bytes32 poolId;\n        address vault;\n    }\n\n    function queryBatchSwap(\n        SwapKind kind,\n        BatchSwapStep[] calldata swaps,\n        address[] calldata assets,\n        FundManagement calldata funds\n    ) external returns (int256[] memory assetDeltas);\n}\n"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.6.12+commit.27d51765",
+        "settings": {
+            "remappings": [
+                "@0x/contracts-utils=/Users/kyuc/code/0x/protocol/packages/asset-swapper/node_modules/@0x/contracts-utils",
+                "@0x/contracts-erc20=/Users/kyuc/code/0x/protocol/packages/asset-swapper/node_modules/@0x/contracts-erc20",
+                "@0x/contracts-zero-ex=/Users/kyuc/code/0x/protocol/packages/asset-swapper/node_modules/@0x/contracts-zero-ex"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 200,
+                "details": {
+                    "yul": false,
+                    "deduplicate": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}
