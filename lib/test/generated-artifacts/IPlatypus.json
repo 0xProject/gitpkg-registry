@@ -1,0 +1,124 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "IPlatypus",
+    "compilerOutput": {
+        "abi": [
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "token",
+                        "type": "address"
+                    }
+                ],
+                "name": "assetOf",
+                "outputs": [
+                    {
+                        "internalType": "address",
+                        "name": "",
+                        "type": "address"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "fromToken",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "toToken",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "fromAmount",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "quotePotentialSwap",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "potentialOutcome",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "haircut",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            }
+        ],
+        "devdoc": {
+            "kind": "dev",
+            "methods": {},
+            "version": 1
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            },
+            "deployedBytecode": {
+                "immutableReferences": {},
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            }
+        }
+    },
+    "sourceTreeHashHex": "0xac4dc2bb6a43b57f3dcfbf34e0fe684998b4587b3ed9e3ba6f3078e34e8e37ef",
+    "sources": {
+        "./IPlatypus.sol": {
+            "id": 37,
+            "content": "pragma solidity ^0.6;\n\ninterface IPlatypus {\n    function quotePotentialSwap(\n        address fromToken,\n        address toToken,\n        uint256 fromAmount\n    ) external view returns (uint256 potentialOutcome, uint256 haircut);\n\n    function assetOf(address token) external view returns (address);\n}"
+        }
+    },
+    "sourceCodes": {
+        "./IPlatypus.sol": "pragma solidity ^0.6;\n\ninterface IPlatypus {\n    function quotePotentialSwap(\n        address fromToken,\n        address toToken,\n        uint256 fromAmount\n    ) external view returns (uint256 potentialOutcome, uint256 haircut);\n\n    function assetOf(address token) external view returns (address);\n}"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.6.12+commit.27d51765",
+        "settings": {
+            "remappings": [
+                "@0x/contracts-erc20=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/protocol/packages/asset-swapper/node_modules/@0x/contracts-erc20",
+                "@0x/contracts-utils=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/protocol/packages/asset-swapper/node_modules/@0x/contracts-utils",
+                "@0x/contracts-zero-ex=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/protocol/packages/asset-swapper/node_modules/@0x/contracts-zero-ex"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 200,
+                "details": {
+                    "yul": false,
+                    "deduplicate": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}
