@@ -1,0 +1,147 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "IUniswapExchangeQuotes",
+    "compilerOutput": {
+        "abi": [
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "ethSold",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "getEthToTokenInputPrice",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "tokensBought",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "tokensBought",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "getEthToTokenOutputPrice",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "ethSold",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "tokensSold",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "getTokenToEthInputPrice",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "ethBought",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "ethBought",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "getTokenToEthOutputPrice",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "tokensSold",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            }
+        ],
+        "devdoc": {
+            "kind": "dev",
+            "methods": {},
+            "version": 1
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            },
+            "deployedBytecode": {
+                "immutableReferences": {},
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            }
+        }
+    },
+    "sourceTreeHashHex": "0xe44871d9c7d7d99a022bcfc77e9c8ebbf1f216c13417eb80636a69962b88a0c5",
+    "sources": {
+        "./IUniswapExchangeQuotes.sol": {
+            "id": 39,
+            "content": "// SPDX-License-Identifier: Apache-2.0\n/*\n\n  Copyright 2020 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.6;\n\n\ninterface IUniswapExchangeQuotes {\n\n    function getEthToTokenInputPrice(\n        uint256 ethSold\n    )\n        external\n        view\n        returns (uint256 tokensBought);\n\n    function getEthToTokenOutputPrice(\n        uint256 tokensBought\n    )\n        external\n        view\n        returns (uint256 ethSold);\n\n    function getTokenToEthInputPrice(\n        uint256 tokensSold\n    )\n        external\n        view\n        returns (uint256 ethBought);\n\n    function getTokenToEthOutputPrice(\n        uint256 ethBought\n    )\n        external\n        view\n        returns (uint256 tokensSold);\n}\n"
+        }
+    },
+    "sourceCodes": {
+        "./IUniswapExchangeQuotes.sol": "// SPDX-License-Identifier: Apache-2.0\n/*\n\n  Copyright 2020 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.6;\n\n\ninterface IUniswapExchangeQuotes {\n\n    function getEthToTokenInputPrice(\n        uint256 ethSold\n    )\n        external\n        view\n        returns (uint256 tokensBought);\n\n    function getEthToTokenOutputPrice(\n        uint256 tokensBought\n    )\n        external\n        view\n        returns (uint256 ethSold);\n\n    function getTokenToEthInputPrice(\n        uint256 tokensSold\n    )\n        external\n        view\n        returns (uint256 ethBought);\n\n    function getTokenToEthOutputPrice(\n        uint256 ethBought\n    )\n        external\n        view\n        returns (uint256 tokensSold);\n}\n"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.6.12+commit.27d51765",
+        "settings": {
+            "remappings": [
+                "@0x/contracts-utils=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/protocol/packages/asset-swapper/node_modules/@0x/contracts-utils",
+                "@0x/contracts-erc20=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/protocol/packages/asset-swapper/node_modules/@0x/contracts-erc20",
+                "@0x/contracts-zero-ex=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/protocol/packages/asset-swapper/node_modules/@0x/contracts-zero-ex"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 200,
+                "details": {
+                    "yul": false,
+                    "deduplicate": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}
