@@ -1,0 +1,75 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "BalancerV2Common",
+    "compilerOutput": {
+        "abi": [],
+        "devdoc": {
+            "kind": "dev",
+            "methods": {},
+            "version": 1
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212204029c15d80918c2a6db5faec2c684e1ab5f0498596087babca3eedeb384d7ee664736f6c634300060c0033",
+                "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x3F DUP1 PUSH1 0x1D PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 BLOCKHASH 0x29 0xC1 0x5D DUP1 SWAP2 DUP13 0x2A PUSH14 0xB5FAEC2C684E1AB5F0498596087B 0xAB 0xCA RETURNDATACOPY 0xED 0xEB CODESIZE 0x4D PUSH31 0xE664736F6C634300060C003300000000000000000000000000000000000000 ",
+                "sourceMap": "722:413:13:-:0;;;;;;;;;;;;;;;;;;;"
+            },
+            "deployedBytecode": {
+                "immutableReferences": {},
+                "linkReferences": {},
+                "object": "0x6080604052600080fdfea26469706673582212204029c15d80918c2a6db5faec2c684e1ab5f0498596087babca3eedeb384d7ee664736f6c634300060c0033",
+                "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 BLOCKHASH 0x29 0xC1 0x5D DUP1 SWAP2 DUP13 0x2A PUSH14 0xB5FAEC2C684E1AB5F0498596087B 0xAB 0xCA RETURNDATACOPY 0xED 0xEB CODESIZE 0x4D PUSH31 0xE664736F6C634300060C003300000000000000000000000000000000000000 ",
+                "sourceMap": "722:413:13:-:0;;;;;"
+            }
+        }
+    },
+    "sourceTreeHashHex": "0x9a6777156124b3562e64a719e39a282bf8a80e743f36b7f244b0d209f0653530",
+    "sources": {
+        "./BalancerV2Common.sol": {
+            "id": 13,
+            "content": "// SPDX-License-Identifier: Apache-2.0\n/*\n\n  Copyright 2021 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.6;\npragma experimental ABIEncoderV2;\n\nimport \"./interfaces/IBalancerV2Vault.sol\";\n\n\ncontract BalancerV2Common {\n\n    function _createSwapFunds()\n        internal\n        view\n        returns (IBalancerV2Vault.FundManagement memory)\n    {\n        return\n            IBalancerV2Vault.FundManagement({\n                sender: address(this),\n                fromInternalBalance: false,\n                recipient: payable(address(this)),\n                toInternalBalance: false\n            });\n    }\n}\n"
+        },
+        "./interfaces/IBalancerV2Vault.sol": {
+            "id": 41,
+            "content": "// SPDX-License-Identifier: Apache-2.0\n/*\n\n  Copyright 2020 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.6;\npragma experimental ABIEncoderV2;\n\n/// @dev Minimal Balancer V2 Vault interface\n///      for documentation refer to https://github.com/balancer-labs/balancer-core-v2/blob/master/contracts/vault/interfaces/IVault.sol\ninterface IBalancerV2Vault {\n    enum SwapKind { GIVEN_IN, GIVEN_OUT }\n\n    struct BatchSwapStep {\n        bytes32 poolId;\n        uint256 assetInIndex;\n        uint256 assetOutIndex;\n        uint256 amount;\n        bytes userData;\n    }\n\n    struct FundManagement {\n        address sender;\n        bool fromInternalBalance;\n        address payable recipient;\n        bool toInternalBalance;\n    }\n\n    struct BalancerV2PoolInfo {\n        bytes32 poolId;\n        address vault;\n    }\n\n    function queryBatchSwap(\n        SwapKind kind,\n        BatchSwapStep[] calldata swaps,\n        address[] calldata assets,\n        FundManagement calldata funds\n    ) external returns (int256[] memory assetDeltas);\n}\n"
+        }
+    },
+    "sourceCodes": {
+        "./BalancerV2Common.sol": "// SPDX-License-Identifier: Apache-2.0\n/*\n\n  Copyright 2021 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.6;\npragma experimental ABIEncoderV2;\n\nimport \"./interfaces/IBalancerV2Vault.sol\";\n\n\ncontract BalancerV2Common {\n\n    function _createSwapFunds()\n        internal\n        view\n        returns (IBalancerV2Vault.FundManagement memory)\n    {\n        return\n            IBalancerV2Vault.FundManagement({\n                sender: address(this),\n                fromInternalBalance: false,\n                recipient: payable(address(this)),\n                toInternalBalance: false\n            });\n    }\n}\n",
+        "./interfaces/IBalancerV2Vault.sol": "// SPDX-License-Identifier: Apache-2.0\n/*\n\n  Copyright 2020 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.6;\npragma experimental ABIEncoderV2;\n\n/// @dev Minimal Balancer V2 Vault interface\n///      for documentation refer to https://github.com/balancer-labs/balancer-core-v2/blob/master/contracts/vault/interfaces/IVault.sol\ninterface IBalancerV2Vault {\n    enum SwapKind { GIVEN_IN, GIVEN_OUT }\n\n    struct BatchSwapStep {\n        bytes32 poolId;\n        uint256 assetInIndex;\n        uint256 assetOutIndex;\n        uint256 amount;\n        bytes userData;\n    }\n\n    struct FundManagement {\n        address sender;\n        bool fromInternalBalance;\n        address payable recipient;\n        bool toInternalBalance;\n    }\n\n    struct BalancerV2PoolInfo {\n        bytes32 poolId;\n        address vault;\n    }\n\n    function queryBatchSwap(\n        SwapKind kind,\n        BatchSwapStep[] calldata swaps,\n        address[] calldata assets,\n        FundManagement calldata funds\n    ) external returns (int256[] memory assetDeltas);\n}\n"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.6.12+commit.27d51765",
+        "settings": {
+            "remappings": [
+                "@0x/contracts-utils=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/protocol/node_modules/@0x/contracts-utils",
+                "@0x/contracts-erc20=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/protocol/node_modules/@0x/contracts-erc20",
+                "@0x/contracts-zero-ex=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/protocol/packages/asset-swapper/node_modules/@0x/contracts-zero-ex"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 200,
+                "details": {
+                    "yul": false,
+                    "deduplicate": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}
