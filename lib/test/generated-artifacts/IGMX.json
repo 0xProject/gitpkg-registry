@@ -1,0 +1,139 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "IGMX",
+    "compilerOutput": {
+        "abi": [
+            {
+                "inputs": [
+                    {
+                        "internalType": "contract IVault",
+                        "name": "_vault",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "_tokenIn",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "_tokenOut",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "_amountIn",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "getAmountOut",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "contract IVault",
+                        "name": "_vault",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "_tokenIn",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "_tokenOut",
+                        "type": "address"
+                    }
+                ],
+                "name": "getMaxAmountIn",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            }
+        ],
+        "devdoc": {
+            "kind": "dev",
+            "methods": {},
+            "version": 1
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            },
+            "deployedBytecode": {
+                "immutableReferences": {},
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            }
+        }
+    },
+    "sourceTreeHashHex": "0x24a4788ea4757e611627d09c68b18450a8fac1c90c5cfac12beb6298f5b52255",
+    "sources": {
+        "./IGMX.sol": {
+            "id": 46,
+            "content": "pragma solidity ^0.6;\npragma experimental ABIEncoderV2;\n\ninterface IGMX {\n    function getMaxAmountIn(IVault _vault, address _tokenIn, address _tokenOut)\n        external\n        view\n        returns (uint256);\n\n    function getAmountOut(IVault _vault, address _tokenIn, address _tokenOut, uint256 _amountIn)\n        external\n        view\n        returns (uint256, uint256);\n}\n\ninterface IVault {\n    function getFeeBasisPoints(address _token, uint256 _usdgDelta, uint256 _feeBasisPoints, uint256 _taxBasisPoints, bool _increment) external view returns (uint256);\n    function stableSwapFeeBasisPoints() external view returns (uint256);\n    function stableTokens(address _token) external view returns (bool);\n    function tokenDecimals(address _token) external view returns (uint256);\n    function getMaxPrice(address _token) external view returns (uint256);\n    function getMinPrice(address _token) external view returns (uint256);\n}"
+        }
+    },
+    "sourceCodes": {
+        "./IGMX.sol": "pragma solidity ^0.6;\npragma experimental ABIEncoderV2;\n\ninterface IGMX {\n    function getMaxAmountIn(IVault _vault, address _tokenIn, address _tokenOut)\n        external\n        view\n        returns (uint256);\n\n    function getAmountOut(IVault _vault, address _tokenIn, address _tokenOut, uint256 _amountIn)\n        external\n        view\n        returns (uint256, uint256);\n}\n\ninterface IVault {\n    function getFeeBasisPoints(address _token, uint256 _usdgDelta, uint256 _feeBasisPoints, uint256 _taxBasisPoints, bool _increment) external view returns (uint256);\n    function stableSwapFeeBasisPoints() external view returns (uint256);\n    function stableTokens(address _token) external view returns (bool);\n    function tokenDecimals(address _token) external view returns (uint256);\n    function getMaxPrice(address _token) external view returns (uint256);\n    function getMinPrice(address _token) external view returns (uint256);\n}"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.6.12+commit.27d51765",
+        "settings": {
+            "remappings": [
+                "@0x/contracts-utils=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/protocol/node_modules/@0x/contracts-utils",
+                "@0x/contracts-erc20=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/protocol/node_modules/@0x/contracts-erc20",
+                "@0x/contracts-zero-ex=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/protocol/packages/asset-swapper/node_modules/@0x/contracts-zero-ex"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 200,
+                "details": {
+                    "yul": false,
+                    "deduplicate": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}

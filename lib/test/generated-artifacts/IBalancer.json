@@ -1,0 +1,229 @@
+{
+    "schemaVersion": "2.0.0",
+    "contractName": "IBalancer",
+    "compilerOutput": {
+        "abi": [
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenBalanceIn",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenWeightIn",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenBalanceOut",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenWeightOut",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenAmountOut",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "swapFee",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "calcInGivenOut",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenAmountIn",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "pure",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenBalanceIn",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenWeightIn",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenBalanceOut",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenWeightOut",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenAmountIn",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "swapFee",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "calcOutGivenIn",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenAmountOut",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "pure",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "token",
+                        "type": "address"
+                    }
+                ],
+                "name": "getBalance",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "token",
+                        "type": "address"
+                    }
+                ],
+                "name": "getDenormalizedWeight",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "getSwapFee",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "t",
+                        "type": "address"
+                    }
+                ],
+                "name": "isBound",
+                "outputs": [
+                    {
+                        "internalType": "bool",
+                        "name": "",
+                        "type": "bool"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            }
+        ],
+        "devdoc": {
+            "kind": "dev",
+            "methods": {},
+            "version": 1
+        },
+        "evm": {
+            "bytecode": {
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            },
+            "deployedBytecode": {
+                "immutableReferences": {},
+                "linkReferences": {},
+                "object": "0x",
+                "opcodes": "",
+                "sourceMap": ""
+            }
+        }
+    },
+    "sourceTreeHashHex": "0x8aa1fa8c3b6465def3073a66091b5cf77fcb639573c3ebb239cf3fcff61b3aef",
+    "sources": {
+        "./IBalancer.sol": {
+            "id": 41,
+            "content": "// SPDX-License-Identifier: Apache-2.0\n/*\n\n  Copyright 2020 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.6;\n\n\ninterface IBalancer {\n    function isBound(address t) external view returns (bool);\n    function getDenormalizedWeight(address token) external view returns (uint256);\n    function getBalance(address token) external view returns (uint256);\n    function getSwapFee() external view returns (uint256);\n    function calcOutGivenIn(\n        uint256 tokenBalanceIn,\n        uint256 tokenWeightIn,\n        uint256 tokenBalanceOut,\n        uint256 tokenWeightOut,\n        uint256 tokenAmountIn,\n        uint256 swapFee\n    ) external pure returns (uint256 tokenAmountOut);\n    function calcInGivenOut(\n        uint256 tokenBalanceIn,\n        uint256 tokenWeightIn,\n        uint256 tokenBalanceOut,\n        uint256 tokenWeightOut,\n        uint256 tokenAmountOut,\n        uint256 swapFee\n    ) external pure returns (uint256 tokenAmountIn);\n}\n"
+        }
+    },
+    "sourceCodes": {
+        "./IBalancer.sol": "// SPDX-License-Identifier: Apache-2.0\n/*\n\n  Copyright 2020 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity ^0.6;\n\n\ninterface IBalancer {\n    function isBound(address t) external view returns (bool);\n    function getDenormalizedWeight(address token) external view returns (uint256);\n    function getBalance(address token) external view returns (uint256);\n    function getSwapFee() external view returns (uint256);\n    function calcOutGivenIn(\n        uint256 tokenBalanceIn,\n        uint256 tokenWeightIn,\n        uint256 tokenBalanceOut,\n        uint256 tokenWeightOut,\n        uint256 tokenAmountIn,\n        uint256 swapFee\n    ) external pure returns (uint256 tokenAmountOut);\n    function calcInGivenOut(\n        uint256 tokenBalanceIn,\n        uint256 tokenWeightIn,\n        uint256 tokenBalanceOut,\n        uint256 tokenWeightOut,\n        uint256 tokenAmountOut,\n        uint256 swapFee\n    ) external pure returns (uint256 tokenAmountIn);\n}\n"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.6.12+commit.27d51765",
+        "settings": {
+            "remappings": [
+                "@0x/contracts-utils=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/protocol/node_modules/@0x/contracts-utils",
+                "@0x/contracts-erc20=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/protocol/node_modules/@0x/contracts-erc20",
+                "@0x/contracts-zero-ex=/Users/jacob/projects/ethdev/0x/workspace-remote/workspace/protocol/packages/asset-swapper/node_modules/@0x/contracts-zero-ex"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 200,
+                "details": {
+                    "yul": false,
+                    "deduplicate": true
+                }
+            },
+            "outputSelection": {
+                "*": {
+                    "*": [
+                        "abi",
+                        "devdoc",
+                        "evm.bytecode.object",
+                        "evm.bytecode.sourceMap",
+                        "evm.deployedBytecode.object",
+                        "evm.deployedBytecode.sourceMap"
+                    ]
+                }
+            },
+            "evmVersion": "istanbul"
+        }
+    },
+    "chains": {}
+}
